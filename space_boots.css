@@ -1,6 +1,7 @@
 body{
     background-color: rgb(167, 212, 255);
 }
+/*body bedzie mial bg-image wartosc domyslna-jasna*/
 header{
     height: 50px;
     background-color: aliceblue;
