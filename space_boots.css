@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(167, 212, 255);
+}
+header{
+    height: 50px;
+    background-color: aliceblue;
+    border-bottom: 3px solid black;
+}
+a.logo{
+    float: left;
+}
+nav{
+    float: right;
+}
+div.main{
+    min-height: 1500px;
+}
+footer{
+    height: 200px;
+    background-color: brown;
+    border-top: 3px solid black;
+}
