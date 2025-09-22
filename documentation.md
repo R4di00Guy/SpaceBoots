@@ -20,3 +20,7 @@ zakończona praca nad wyglądem głównych stron i podstron w Figmie
 rozpoczęto głosowanie za logo
 rozpoczęta konwersacja o reelekcji lidera
 rozpoczęta konwersacja o ponownym podziale obowiązków w związku z nieefektywnej działalności członków drużyny 
+stworzenie GitHub'u projektu
+## 22.09.2025
+Praca nad wyglądem GitHub'u 
+przenoszenie elementów z Google drive do GitHub
