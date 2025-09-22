@@ -1,2 +1,2 @@
 # SpaceBoots
-## Repositorium *main*- opis pojektu, lista uczestników
+## Repositorium *dokumentacja*- dokumentacja projektu
