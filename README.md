@@ -1,2 +1,2 @@
 # SpaceBoots
-Spaceboots' repository
+Spaceboots' repository. 
