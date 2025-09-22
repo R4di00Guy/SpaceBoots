@@ -1,0 +1,1 @@
+https://trello.com/invite/b/68c7ec076cb3aca83a98fad5/ATTI5b27832e580df142a281cfcc6b9c1cb30F809EBE/sklep-projekt
