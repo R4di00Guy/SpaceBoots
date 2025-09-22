@@ -1,7 +1,7 @@
-###Opis projektu:
+### Opis projektu:
   SpaceBoots -- jest to sklep internetowy butów z tematyką kosmiczną. Zawiera w sobie bazę danych, możliwość złożenia zamówień, możliwość rejestrowania i logowania się, fajny eksperymentalny wygląd, kt. zdaniem twórców podkreśla kosmiczną tematykę, jaka zawsze jest związana z przyszłością i żanrem fantastyki.
 
-###Project Workers: 
+### Project Workers: 
   Varvara Yukhnavets; 
   Pesenko Ruslan; 
   Zuzanna Ciba; 
@@ -10,17 +10,17 @@
   Wiktor Kiliański; 
   Antek Sołtys; 
 
-###Podział obowiżków:
-##lider/kontroler/serkretarka:
+### Podział obowiżków:
+## lider/kontroler/serkretarka:
 	Zuzanna
-##programiści:
+## programiści:
 	Wiktor
 	Ruslan
 	Varvara
 	Bartek
 	Marek
-##designerze:
+## designerze:
 	Varvara
 	Marek
-##tester:
+## tester:
 	Antek
