@@ -1,2 +1,2 @@
 # SpaceBoots
-Spaceboots' repository
+## Repositorium main- opis pojektu, lista uczestników
