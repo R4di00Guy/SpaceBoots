@@ -1,2 +1,2 @@
 # SpaceBoots
-## Repositorium *main*- opis pojektu, lista uczestników
+## Repositorium *design*- Dyzajn srony, link do Figmy
