@@ -9,3 +9,18 @@
   Bartek Koper; 
   Wiktor Kiliański; 
   Antek Sołtys; 
+
+###Podział obowiżków:
+##lider/kontroler/serkretarka:
+	Zuzanna
+##programiści:
+	Wiktor
+	Ruslan
+	Varvara
+	Bartek
+	Marek
+##designerze:
+	Varvara
+	Marek
+##tester:
+	Antek
