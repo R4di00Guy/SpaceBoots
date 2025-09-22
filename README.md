@@ -1,3 +1,2 @@
 # SpaceBoots
-Spaceboots' repository
-Project Workers: 3TPA
+Repositorium *home-page*- pliki dotyczące Strony Głownej 
