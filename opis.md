@@ -1,6 +1,6 @@
 Opis projektu
 
-Project Workers: 
+###Project Workers: 
 Varvara Yukhnavets
 Pesenko Ruslan
 Zuzanna Ciba
