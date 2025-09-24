@@ -24,3 +24,9 @@ stworzenie GitHub'u projektu
 ## 22.09.2025
 Praca nad wyglądem GitHub'u 
 przenoszenie elementów z Google drive do GitHub
+## 23.09.2025
+Html SpaceBoots_Home
+Css SpaceBoots_Home
+## 24.09.2025
+Kontynuacja napisania HTML i CSS zgodnie z widokiem w Figmie
+Czasowe przemieszczenie JPG do folderu HomePage
