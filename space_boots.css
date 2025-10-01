@@ -10,11 +10,11 @@ body{
 
     margin: 0 auto;
     padding: 0;
-    animation: slide 3s linear infinite;
+    animation: slide 90s linear infinite;
 }
 @keyframes slide {
     0%{background-position: 0% 0%;}
-    100%{background-position: -210% 0%;}
+    100%{background-position: -212% 0%;}
 }
 /*body bedzie mial bg-image wartosc domyslna-jasna*/
 header{
@@ -66,6 +66,17 @@ a.logo{
 a.nav{
     border-right: 5px solid black;
     padding: 0px 20px;
+    color: black;
+    text-decoration: none;
+    transition: 0.2s linear;
+    font-weight: 600;
+    margin: 0;
+}
+a.nav:hover{
+    /* color:rgb(255, 157, 0);
+    text-shadow:1px 1px 1px rgba(76, 0, 148, 0.419); */
+    color: rgb(255, 202, 118);
+    text-shadow: 0px 0px 19px rgba(76, 0, 148, 0.74);
 }
 nav{
     float: right;
