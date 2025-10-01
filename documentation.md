@@ -30,3 +30,6 @@ Css SpaceBoots_Home
 ## 24.09.2025
 Kontynuacja napisania HTML i CSS zgodnie z widokiem w Figmie
 Czasowe przemieszczenie JPG do folderu HomePage
+## 01.10.2025
+zmiana kodu CSS
+zmiana kodu HTML
