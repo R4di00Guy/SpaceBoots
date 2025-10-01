@@ -10,6 +10,11 @@ body{
 
     margin: 0 auto;
     padding: 0;
+    animation: slide 3s linear infinite;
+}
+@keyframes slide {
+    0%{background-position: 0% 0%;}
+    100%{background-position: -210% 0%;}
 }
 /*body bedzie mial bg-image wartosc domyslna-jasna*/
 header{
@@ -76,6 +81,7 @@ div.main{
     border: 5px solid black;
     margin: 16px;
     background-color: rgba(255, 255, 255, 0.380);
+    padding: 15px;
 }
 #home{
     position: relative;

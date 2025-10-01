@@ -1,2 +1,2 @@
 # SpaceBoots
-Repositorium *home-page*- pliki dotyczące Strony Głownej 
+Repositorium *home-page*- pliki dotyczące Strony Głównej 
