@@ -33,3 +33,4 @@ Czasowe przemieszczenie JPG do folderu HomePage
 ## 01.10.2025
 zmiana kodu CSS
 zmiana kodu HTML
+---
