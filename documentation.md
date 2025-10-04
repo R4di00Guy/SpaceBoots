@@ -34,5 +34,5 @@ Czasowe przemieszczenie JPG do folderu HomePage
 zmiana kodu CSS
 zmiana kodu HTML
 ## 02.10.2025
-dodanie biblioteki jquert do repozitorium home-pg
+dodanie biblioteki jquery do repozitorium home-pg
 ---
