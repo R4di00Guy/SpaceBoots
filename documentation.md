@@ -33,4 +33,6 @@ Czasowe przemieszczenie JPG do folderu HomePage
 ## 01.10.2025
 zmiana kodu CSS
 zmiana kodu HTML
+## 02.10.2025
+dodanie biblioteki jquert do repozitorium home-pg
 ---
