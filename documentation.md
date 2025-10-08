@@ -36,3 +36,10 @@ zmiana kodu HTML
 ## 02.10.2025
 dodanie biblioteki jquery do repozitorium home-pg
 ---
+## 04.10.2025
+przygotowanie bazy danych i zdjęć do bazy danych
+## 07.10.2025
+decydowanie sposobu połączenia bazy danych ze stroną
+praca nad bazą danych
+## 08.10.2025
+HTML/Css
