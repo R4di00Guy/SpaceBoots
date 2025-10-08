@@ -88,7 +88,7 @@ div.mainholder{
     height: auto;
 }
 div.main{
-    min-height: 1500px;
+    min-height: 500px;
     border: 5px solid black;
     margin: 16px;
     background-color: rgba(255, 255, 255, 0.380);
