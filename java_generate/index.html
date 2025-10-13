@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Generatingt</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header><h1>JavaScript Generating</h1></header>
+
+    <main id="mn">
+        <div class="container">
+            <h3>Product</h3>
+            <div id="div1" class="product_img_cont">
+                <img class="product_img" src="glhf.png">
+            </div>
+            <h4>price</h4>
+        </div>
+        
+
+    </main>
+    <footer></footer>
+    <script>
+        function add_block(){
+            const product_id=9;
+            const name=new Array;
+            const img_src=new Array;
+            const price=new Array;
+
+            
+            name[0]="Scetchers";
+            img_src[0]="glhf.png";
+            price[0]=340.00;
+
+            
+            name[1]="Puma";
+            img_src[1]="glhf.png";
+            price[1]=570.00;
+
+            
+            name[2]="Joma";
+            img_src[2]="glhf.png";
+            price[2]=320.00;
+
+            for(i=0;i<product_id;i++){
+                document.getElementById("mn").innerHTML+=`
+                <div class="container">
+                <h3>`+name[i]+`</h3>
+                <div id="div1" class="product_img_cont">
+                    <img class="product_img" src="`+img_src[i]+`">
+                </div>
+                <h4>`+price[i]+` zl</h4>
+                </div>
+                `}
+        }
+        add_block();
+    </script>
+</body>
+</html>
