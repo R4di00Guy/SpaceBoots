@@ -43,3 +43,5 @@ decydowanie sposobu połączenia bazy danych ze stroną
 praca nad bazą danych
 ## 08.10.2025
 HTML/Css
+## 13.10.2025
+zrobienie i dodanie pliku z przykladem pracy auto-stwarzania blokow z pomoca js
