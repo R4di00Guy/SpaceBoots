@@ -22,27 +22,27 @@
     <footer></footer>
     <script>
         function add_block(){
-            const product_id=9;
-            const name=new Array;
-            const img_src=new Array;
-            const price=new Array;
+            const product_id=9; //define how many products it will be 
+            const name=new Array; //define array related to product name
+            const img_src=new Array; //define array related to product image
+            const price=new Array; //define array related to product price
 
             
-            name[0]="Scetchers";
+            name[0]="Scetchers"; //1st product
             img_src[0]="glhf.png";
             price[0]=340.00;
 
             
-            name[1]="Puma";
+            name[1]="Puma"; //2nd product
             img_src[1]="glhf.png";
             price[1]=570.00;
 
             
-            name[2]="Joma";
+            name[2]="Joma"; //3rd product
             img_src[2]="glhf.png";
             price[2]=320.00;
 
-            for(i=0;i<product_id;i++){
+            for(i=0;i<product_id;i++){ //adding products into html main
                 document.getElementById("mn").innerHTML+=`
                 <div class="container">
                 <h3>`+name[i]+`</h3>
@@ -56,4 +56,5 @@
         add_block();
     </script>
 </body>
+
 </html>
