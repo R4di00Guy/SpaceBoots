@@ -45,3 +45,5 @@ praca nad bazą danych
 HTML/Css
 ## 13.10.2025
 zrobienie i dodanie pliku z przykladem pracy auto-stwarzania blokow z pomoca js
+## 17.10.2025
+podstrony About i Contact
