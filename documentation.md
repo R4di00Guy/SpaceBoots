@@ -47,3 +47,6 @@ HTML/Css
 zrobienie i dodanie pliku z przykladem pracy auto-stwarzania blokow z pomoca js
 ## 17.10.2025
 podstrony About i Contact
+## 06.11.2025
+zrobienie raw wersji podstrony about us
+
