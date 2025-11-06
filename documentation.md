@@ -51,4 +51,4 @@ podstrony About i Contact
 zrobienie raw wersji podstrony about us
 zrobienie raw wersji podstrony contact
 dodatkowe pracy nad stylami css
-
+zrobienie funkcji przelanczania dzien/noc
