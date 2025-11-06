@@ -49,4 +49,6 @@ zrobienie i dodanie pliku z przykladem pracy auto-stwarzania blokow z pomoca js
 podstrony About i Contact
 ## 06.11.2025
 zrobienie raw wersji podstrony about us
+zrobienie raw wersji podstrony contact
+dodatkowe pracy nad stylami css
 
