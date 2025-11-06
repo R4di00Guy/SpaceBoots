@@ -72,10 +72,23 @@ a.nav{
     font-weight: 600;
     margin: 0;
 }
+.the_choosen_one{
+    background-color: #FFF6C3;
+    border-radius: 9px;
+    border-right: 5px solid black;
+}
+.the_choosen_one a{
+    border-right: none;
+}
 a.nav:hover{
     /* color:rgb(255, 157, 0);
     text-shadow:1px 1px 1px rgba(76, 0, 148, 0.419); */
     color: rgb(255, 202, 118);
+    text-shadow: 0px 0px 19px rgba(76, 0, 148, 0.74);
+}
+.the_choosen_one a:hover{
+    border-right: none;
+    color: rgb(255, 255, 255);
     text-shadow: 0px 0px 19px rgba(76, 0, 148, 0.74);
 }
 nav{
@@ -93,6 +106,11 @@ div.main{
     margin: 16px;
     background-color: rgba(255, 255, 255, 0.380);
     padding: 15px;
+}
+p.about_inf{
+    padding: 30px;
+    margin-left: 10px;
+    border-left: 5px solid black;
 }
 #home{
     position: relative;
