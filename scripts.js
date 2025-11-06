@@ -8,6 +8,7 @@ $(function(){
             'background-image': 'url("SpaceBoots_logo.png")',
             'color':'white',
         });
+        $('#themeSwitch').text("⏾");
         l=1;
         console.log(l);
     }
@@ -16,6 +17,7 @@ $(function(){
             'background-image': 'url("bckgrnd_light.jpg")',
             'color':'black',
         });
+        $('#themeSwitch').text("☀");
         l=0;
         console.log(l);
     }
