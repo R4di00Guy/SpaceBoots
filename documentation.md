@@ -54,3 +54,4 @@ dodatkowe pracy nad stylami css
 zrobienie funkcji przelanczania dzien/noc
 ## 08.11.2025
 zrobienie raw wersji strony log in
+zrobienie raw wersji strony sign in
