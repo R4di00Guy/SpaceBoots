@@ -216,12 +216,50 @@ footer{
     border-top: 5px solid black;
 }
 /* następna klasa jest w widoku testowym: w wersji kńcowej musi być niewidziana */
-div.afterwords{
+/* div.afterwords{
     background-color: rgba(0, 0, 255, 0.404);
     width: 600px;
     height: 300px;
     margin: 0 auto;
-}
+} */
 #homef{
     clear: both;
+    height: 400px;
+    padding: 20px 50px;
 }
+.footerlogo{
+    float: left;
+    width: 50%;;
+    height: 200px;
+    margin-bottom: 100px;
+}
+.afterwords{
+    float: left;
+    width: 50%;
+    height: 250px;
+    margin-bottom: 100px;
+}
+.afterwords table{
+    height: 100%;
+    width: 100%;
+}
+.afterwords a{
+    text-decoration: none;
+    color: black;
+}
+.afterwords a:hover{
+    text-shadow: 0px 0px 19px rgba(76, 0, 148, 0.74);
+}
+.socials{
+    clear: both;
+    width: 500px;
+    height: 50px;
+}
+.socials ul{
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
