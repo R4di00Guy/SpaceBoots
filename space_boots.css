@@ -28,6 +28,19 @@ header{
 nav{
     margin: 54px 16px 0px 0px;
 }
+#themeSwitch{
+    width: 31px;
+    height: 31px;
+    font-size: 21px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #1E96FF;
+    border-radius: 30px;
+    border: solid 2px #fff;
+    color: #FFDF0E;
+    /* padding-bottom: 25px; */
+    line-height: 0px;
+}
 h1{
     font-family: "IM Fell Great Primer SC", serif;
     font-weight: 400;
@@ -69,14 +82,25 @@ a.logo{
     float: left;
 }
 a.nav{
-    border-right: 5px solid black;
-    border-left: 5px solid rgba(0, 0, 0, 0);
+    /* border-right: 5px solid black;
+    border-left: 5px solid rgba(0, 0, 0, 0); */
     padding: 0px 20px 0px 13px;
     color: black;
     text-decoration: none;
     transition: 0.2s linear;
     font-weight: 600;
     margin: 0;
+}
+div.spaces{
+    height: 30.4px;
+    width: 0px;
+    border-right: solid 3px black;
+    /* background-color: black; */
+    margin: 0px 9px;
+    display: inline-block;
+}
+div.spaces, a.nav {
+    vertical-align: middle;
 }
 .the_choosen_one{
     background-color: #FFF6C3;
@@ -162,6 +186,17 @@ div.main{
     text-align: center;
     font-size: 40px;
     clear: both;
+}
+.login_main h2{
+    /* margin-top: -27px; */
+    z-index: 2;
+}
+.login_main .line{
+    height: 3px;
+    width: 100%;
+    background-color: black;
+    margin-top: 55px;
+    z-index: 1;
 }
 .login_main input{
     width: 100%;
