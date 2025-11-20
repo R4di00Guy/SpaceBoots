@@ -262,4 +262,16 @@ footer{
     display: flex;
     gap: 20px;
 }
+.copyrights{
+    float: right;
+    margin: 0;
+    padding: 0;
+     height: 50px;
+}
+.copyrights h4{
+    font-family: Gelasio;
+    margin: 0;
+    padding: 0;
+}
+
 
