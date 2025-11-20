@@ -213,7 +213,6 @@ div.filters{
 footer{
     height: 300px;
     background-color: rgb(255, 255, 255);
-    border-top: 5px solid black;
 }
 /* następna klasa jest w widoku testowym: w wersji kńcowej musi być niewidziana */
 /* div.afterwords{
@@ -274,6 +273,7 @@ footer{
     margin: 0;
     padding: 0;
 }
+
 
 
 
