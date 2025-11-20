@@ -9,7 +9,7 @@ body{
     font-style: normal;
 
     margin: 0 auto;
-    padding: 0;
+    padding: 0 auto;
     animation: slide 90s linear infinite;
 }
 @keyframes slide {
@@ -70,7 +70,8 @@ a.logo{
 }
 a.nav{
     border-right: 5px solid black;
-    padding: 0px 20px;
+    border-left: 5px solid rgba(0, 0, 0, 0);
+    padding: 0px 20px 0px 13px;
     color: black;
     text-decoration: none;
     transition: 0.2s linear;
@@ -88,12 +89,14 @@ a.nav{
 a.nav:hover{
     /* color:rgb(255, 157, 0);
     text-shadow:1px 1px 1px rgba(76, 0, 148, 0.419); */
-    color: rgb(255, 202, 118);
+    color: rgb(255, 228, 184);
     text-shadow: 0px 0px 19px rgba(76, 0, 148, 0.74);
 }
 .the_choosen_one a:hover{
+    border-radius: 9px;
     border-right: none;
     color: rgb(255, 255, 255);
+    background-color: #ffdda3;
     text-shadow: 0px 0px 19px rgba(76, 0, 148, 0.74);
 }
 nav{
@@ -102,13 +105,16 @@ nav{
 div.mainholder{
     margin: 0;
     padding: 0;
-    width: auto;
+    width: auto; 
+    min-width: 608px;
     height: auto;
 }
 div.main{
-    min-height: 300px; /*changed it from 500px to normal min-height in contact page*/
+    min-height: 300px;
+    min-width: 608px;
+    max-width: 65%;
     border: 5px solid black;
-    margin: 16px;
+    margin: 16px auto;
     background-color: rgba(255, 255, 255, 0.380);
     padding: 15px;
 }
@@ -146,7 +152,10 @@ div.main{
     height: fit-content;
     min-height: 300px;
     padding: 5px 20px;
+    border: solid rgba(98, 0, 217, 0.48) 2px;
 }
+.login_main a{
+    transition: 0.2s linear;}
 .login_main h1,.login_main h2{
     margin-bottom: 0;
     margin-top: 10px;
@@ -182,9 +191,17 @@ div.main{
 }
 .login_main h4, .login_main h4 a{
     color: black;
-    opacity: 41%;
+    opacity: 90%;
     font-family: Gelasio;
     font-size: 16px;
+}
+.login_main h4 a{
+    opacity: 100%;
+    font-weight: 800;
+}
+.login_main a:hover{
+    color: rgb(61, 0, 184);
+    text-shadow: 0px 0px 19px rgba(76, 0, 148, 0.74);
 }
 .about_inf{
     padding: 30px;
@@ -274,9 +291,3 @@ footer{
     margin: 0;
     padding: 0;
 }
-
-
-
-
-
-
