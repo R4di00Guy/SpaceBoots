@@ -1,5 +1,4 @@
 //day/night switch themeSwitch
-
 var l=0;
 $(function(){
     $('#themeSwitch').click(function(){
@@ -8,7 +7,16 @@ $(function(){
             'background-image': 'url("eds_bcc.gif")',
             'color':'white',
         });
-        $('#themeSwitch').text("⏾");
+        $('a').css({
+            'color':'white',
+        });
+        $('footer').css({
+            'background-color':'black',
+        });
+        $('header').css({
+            'border-bottom':'5px solid white'
+        });
+        $('#themeSwitch').text("☾");
         l=1;
         console.log(l);
     }
@@ -16,6 +24,15 @@ $(function(){
             $('body').css({//changes dark to light
             'background-image': 'url("bckgrnd_light.jpg")',
             'color':'black',
+        });
+        $('a').css({
+            'color':'black',
+        });
+         $('footer').css({
+            'background-color':'white',
+        });
+        $('header').css({
+            'border-bottom':'5px solid black'
         });
         $('#themeSwitch').text("☀");
         l=0;
