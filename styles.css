@@ -1,0 +1,332 @@
+body{
+    background-image: url("images/bckgrnd_light.jpg");
+    background-repeat: repeat;
+    background-size: 512px;
+
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
+    margin: 0 auto;
+    padding: 0 auto;
+    animation: slide 90s linear infinite;
+}
+@keyframes slide {
+    0%{background-position: 0% 0%;}
+    100%{background-position: -212% 0%;}
+}
+/*body bedzie mial bg-image wartosc domyslna-jasna*/
+header{
+    height: 90px;
+    width: 100%;
+    background-color: rgba(240, 248, 255, 0);
+    border-bottom: 5px solid black;
+    font-size: 25px;
+}
+/* nav do optymizacji */
+nav{
+    margin: 54px 16px 0px 0px;
+}
+#themeSwitch{
+    width: 31px;
+    height: 31px;
+    font-size: 21px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #1E96FF;
+    border-radius: 30px;
+    border: solid 2px #fff;
+    color: #FFDF0E;
+    /* padding-bottom: 25px; */
+    line-height: 0px;
+}
+h1{
+    font-family: "IM Fell Great Primer SC", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+h2{
+    font-family: "Gravitas One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+h1.cnt_us{
+    font-family: Gelasio;
+    font-weight: 900;
+    text-decoration: underline;
+}
+h3{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+h4{
+    font-family: "Jaini", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+h5{
+    font-family: "Jersey 15", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+h6{
+    font-family: "Gelasio", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+a.logo{
+    float: left;
+}
+a.logo, a.logo img{
+    /* max-width: 400px; */
+    max-height: 90px;
+}
+a.nav{
+    /* border-right: 5px solid black;
+    border-left: 5px solid rgba(0, 0, 0, 0); */
+    padding: 0px 20px 0px 13px;
+    color: black;
+    text-decoration: none;
+    transition: 0.2s linear;
+    font-weight: 600;
+    margin: 0;
+}
+div.spaces{
+    height: 30.4px;
+    width: 0px;
+    border-right: solid 3px black;
+    /* background-color: black; */
+    margin: 0px 9px;
+    display: inline-block;
+}
+div.spaces, a.nav {
+    vertical-align: middle;
+}
+.the_choosen_one{
+    background-color: #FFF6C3;
+    border-radius: 9px;
+    border-right: 5px solid black;
+}
+.the_choosen_one a{
+    border-right: none;
+}
+a.nav:hover{
+    /* color:rgb(255, 157, 0);
+    text-shadow:1px 1px 1px rgba(76, 0, 148, 0.419); */
+    color: rgb(255, 228, 184);
+    text-shadow: 0px 0px 19px rgba(76, 0, 148, 0.74);
+}
+.the_choosen_one a:hover{
+    border-radius: 9px;
+    border-right: none;
+    color: rgb(255, 255, 255);
+    background-color: #ffdda3;
+    text-shadow: 0px 0px 19px rgba(76, 0, 148, 0.74);
+}
+nav{
+    float: right;
+}
+div.mainholder{
+    margin: 0;
+    padding: 0;
+    width: auto; 
+    min-width: 608px;
+    height: auto;
+}
+div.main{
+    min-height: 300px;
+    min-width: 608px;
+    max-width: 65%;
+    border: 5px solid black;
+    margin: 16px auto;
+    background-color: rgba(255, 255, 255, 0.380);
+    padding: 15px;
+}
+#log-sig{
+    background-color: #FFEA9461;
+}
+.login_head{
+    font-family: "Jaini", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    width: 249px;
+    margin: auto;
+    padding: 2px 20px;
+    background-color: #fff;
+    border-radius: 49px;
+}
+.login_head a{
+    font-family: "Jaini", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: black;
+}
+.login_head h1{
+    font-family: "Jaini", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+}
+.login_main{
+    background-color: #fff;
+    margin: auto;
+    margin-top: 20px;
+    width: 299px;
+    height: fit-content;
+    min-height: 300px;
+    padding: 5px 20px;
+    border: solid rgba(98, 0, 217, 0.48) 2px;
+}
+.login_main a{
+    transition: 0.2s linear;}
+.login_main h1,.login_main h2{
+    margin-bottom: 0;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 40px;
+    clear: both;
+}
+.login_main h2{
+    /* margin-top: -27px; */
+    z-index: 2;
+}
+.login_main .line{
+    height: 3px;
+    width: 100%;
+    background-color: black;
+    margin-top: 55px;
+    z-index: 1;
+}
+.login_main input{
+    width: 100%;
+    margin: 10px 0px;
+    height: 32px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: "Jersey 15", sans-serif;
+}
+.login_main #log_login_inp{
+    width: auto;
+    float: right;
+    min-width: 25%;
+}
+.login_main a#log_password{
+    height: 32px;
+    font-family: "Jaini", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    display: block;
+    float: left;
+    margin-top: 10px;
+}
+.login_main h4{
+    margin-top: 30px;
+}
+.login_main h4, .login_main h4 a{
+    color: black;
+    opacity: 90%;
+    font-family: Gelasio;
+    font-size: 16px;
+}
+.login_main h4 a{
+    opacity: 100%;
+    font-weight: 800;
+}
+.login_main a:hover{
+    color: rgb(61, 0, 184);
+    text-shadow: 0px 0px 19px rgba(76, 0, 148, 0.74);
+}
+.about_inf{
+    padding: 30px;
+    margin-left: 0px;
+    border-left: 5px solid black;
+}
+.spaces_{
+    margin-left: 100px;
+}
+#home{
+    position: relative;
+    /* top: 90px; */
+    width: 70%;
+    float: left;
+}
+/* bloczek najeżdża na footer: trzeba naprawić */
+div.filters{
+    width: auto;
+    min-height: 400px;
+    border: 5px solid black;
+    margin: 16px 16px 16px 0px;
+    float: right;
+    top: 0;
+    position: sticky;
+    top: 20px;
+}
+footer{
+    height: 300px;
+    background-color: rgb(255, 255, 255);
+}
+/* następna klasa jest w widoku testowym: w wersji kńcowej musi być niewidziana */
+/* div.afterwords{
+    background-color: rgba(0, 0, 255, 0.404);
+    width: 600px;
+    height: 300px;
+    margin: 0 auto;
+} */
+#homef{
+    clear: both;
+    height: 400px;
+    padding: 20px 50px;
+}
+.footerlogo{
+    float: left;
+    width: 50%;;
+    height: 200px;
+    margin-bottom: 100px;
+}
+.afterwords{
+    float: left;
+    width: 50%;
+    height: 250px;
+    margin-bottom: 100px;
+}
+.afterwords table{
+    height: 100%;
+    width: 100%;
+}
+.afterwords a{
+    text-decoration: none;
+    color: black;
+}
+.afterwords a:hover{
+    text-shadow: 0px 0px 19px rgba(76, 0, 148, 0.74);
+}
+.socials{
+    clear: both;
+    width: 500px;
+    height: 50px;
+    float: left;
+}
+.socials ul{
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+.copyrights{
+    float: right;
+    margin: 0;
+    padding: 0;
+     height: 50px;
+}
+.copyrights h4{
+    font-family: Gelasio;
+    margin: 0;
+    padding: 0;
+}

@@ -4,7 +4,7 @@ $(function(){
     $('#themeSwitch').click(function(){
         if(l==0){
         $('body').css({//changes light to dark
-            'background-image': 'url("eds_bcc.gif")',
+            'background-image': 'url("images/eds_bcc.gif")',
             'color':'white',
         });
         $('a').css({
@@ -22,7 +22,7 @@ $(function(){
     }
         else{
             $('body').css({//changes dark to light
-            'background-image': 'url("bckgrnd_light.jpg")',
+            'background-image': 'url("images/bckgrnd_light.jpg")',
             'color':'black',
         });
         $('a').css({
