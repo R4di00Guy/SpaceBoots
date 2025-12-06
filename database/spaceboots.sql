@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2025 at 04:01 PM
+-- Generation Time: Dec 06, 2025 at 04:12 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -112,7 +112,17 @@ INSERT INTO `products` (`id_product`, `p_name`, `p_price`, `p_color`, `p_collect
 (7, '', 3.79, 'Red', ''),
 (8, '', 1.79, 'Green', ''),
 (9, '', 6.99, 'Indigo', ''),
-(10, '', 49.99, 'Khaki', '');
+(10, '', 49.99, 'Khaki', ''),
+(11, '', 99.99, 'Purple', ''),
+(12, '', 1.99, 'Violet', ''),
+(13, '', 3.29, 'Goldenrod', ''),
+(14, '', 3.29, 'Blue', ''),
+(15, '', 2.99, 'Red', ''),
+(16, '', 4.89, 'Aquamarine', ''),
+(17, '', 5.49, 'Mauv', ''),
+(18, '', 4.29, 'Purple', ''),
+(19, '', 3.49, 'Blue', ''),
+(20, '', 29.99, 'Khaki', '');
 
 -- --------------------------------------------------------
 
@@ -170,7 +180,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `shopping_cart`
