@@ -55,3 +55,21 @@ zrobienie funkcji przelanczania dzien/noc
 ## 08.11.2025
 zrobienie raw wersji strony log in
 zrobienie raw wersji strony sign in
+## 18.11.2025
+system przełączenia widoku strony: ciemny i jasny
+przygotowania materiałów dla strony (obrazy butów)
+## 20.11.2025
+system przełączenia widoku strony: ciemny i jasny
+przygotowania materiałów dla strony (obrazy butów)
+## 22.11.2025
+doprowadzanie kodu do czytalnego wyglądu
+porządkowanie plików, logiczna lokacja 
+redakcja strony, udoskonalenie jej wyglądu
+## 05.12.2025
+utwotzenie bazy danych
+utworzenie struktury bazy
+jej uzupełnienie i testowania łącza dla bazy
+## 06.12.2025
+przeniesie obrazów, ikon i innych danych
+## 07.12.2025
+operacje na bazie danych, testowane triggerów
