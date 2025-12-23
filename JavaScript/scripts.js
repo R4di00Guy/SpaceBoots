@@ -16,7 +16,15 @@ $(function(){
         $('header').css({
             'border-bottom':'5px solid white'
         });
-        $('#themeSwitch').text("☾");
+        $('.themes').attr({
+            "alt":"dark theme",
+            "src":"images/ikony/ksiezyc.png",
+        });
+        $('.themes').css({
+            'bottom':'1px',
+            'right':'2px',
+        });
+        $('#cart').css({'filter':'invert()',});
         l=1;
         console.log(l);
     }
@@ -34,7 +42,15 @@ $(function(){
         $('header').css({
             'border-bottom':'5px solid black'
         });
-        $('#themeSwitch').text("☀");
+         $('.themes').attr({
+            "alt":"light theme",
+            "src":"images/ikony/slonce.png",
+        });
+         $('.themes').css({
+            'bottom':'3px',
+            'right':'0px',
+        });
+        $('#cart').css({'filter':'none',});
         l=0;
         console.log(l);
     }
