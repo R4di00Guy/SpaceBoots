@@ -71,6 +71,7 @@ utworzenie struktury bazy
 jej uzupełnienie i testowania łącza dla bazy
 ## 06.12.2025
 przeniesie obrazów, ikon i innych danych
+dodanie do home_page skryptu do auto dodawania i okna z filtrami(to wszystko w pliku z dodatkiem 'test') 
 ## 07.12.2025
 operacje na bazie danych, testowane triggerów
 ## 23.12.2025
