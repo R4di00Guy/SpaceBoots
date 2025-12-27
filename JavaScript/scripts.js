@@ -1,4 +1,4 @@
-//day/night switch themeSwitch
+//day/night switch themeSwitch(need to be optimized)
 var l=0;
 $(function(){
     $('#themeSwitch').click(function(){
