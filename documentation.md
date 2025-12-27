@@ -75,3 +75,5 @@ przeniesie obrazów, ikon i innych danych
 operacje na bazie danych, testowane triggerów
 ## 23.12.2025
 praca nad css, html i html
+## 27.12.2025
+edycja wszelkich gotowych stron
