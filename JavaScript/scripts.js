@@ -16,6 +16,24 @@ $(function(){
         $('header').css({
             'border-bottom':'5px solid white'
         });
+        $('.login_head').css({
+            'background-color':'black',
+        });
+        $('.login_main').css({
+            'background-color':'black',
+        });
+        $('.line').css({
+            'background-color':'white',
+        });
+        $('#orsign').css({
+            'background-color':'black',
+        });
+        $('#orsign').css({
+            'background-color':'black',
+        });
+        $('h4').css({
+            'color':'white',
+        });
         $('.themes').attr({
             "alt":"dark theme",
             "src":"images/ikony/ksiezyc.png",
@@ -49,6 +67,24 @@ $(function(){
          $('.themes').css({
             'bottom':'3px',
             'right':'0px',
+        });
+        $('.login_head').css({
+            'background-color':'white',
+        });
+        $('.login_main').css({
+            'background-color':'white',
+        });
+        $('.line').css({
+            'background-color':'black',
+        });
+        $('#orsign').css({
+            'background-color':'white',
+        });
+        $('#orsign').css({
+            'background-color':'white',
+        });
+        $('h4').css({
+            'color':'black',
         });
         $('#cart').css({'filter':'none',});
         l=0;

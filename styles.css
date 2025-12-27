@@ -1,3 +1,4 @@
+*{transition: 0.2s linear;}
 body{
     background-image: url("images/bckgrnd_light.jpg");
     background-repeat: repeat;
