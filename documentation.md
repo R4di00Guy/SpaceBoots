@@ -73,3 +73,5 @@ jej uzupełnienie i testowania łącza dla bazy
 przeniesie obrazów, ikon i innych danych
 ## 07.12.2025
 operacje na bazie danych, testowane triggerów
+## 23.12.2025
+praca nad css, html i html
