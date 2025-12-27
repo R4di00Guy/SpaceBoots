@@ -1,1 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--robimy strone w jezyku angielskim-->
+<head>
+    <meta charset="UTF-8">
+    <title>SpaceBoots test Home page</title>
+    <link href="styles.css" rel="stylesheet">
+    <html lang="en">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaini&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+Great+Primer+SC&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gravitas+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+<script src="JavaScript/jquery-3.7.1.js"></script>
+<script src="JavaScript/scripts.js"></script>
+</head>
+<body>
+    <header>
+        <a href="space_boots_home.html" class="logo"><img src="images/SpaceBoots_logo2.png"></a>
+        <!--logo--> 
+        <nav>
+                <a href="#" class="nav"><img id="cart" alt="shopping cart" src='images/ikony/koszyk.png'></a><!--koszyk--><div class="spaces"></div>
+                <a href="#" class="nav">Category</a><!--dropdown menu?--><div class="spaces"></div>
+                <a href="aboutus_SpaceBoots.html" class="nav">About us</a><!--link do podstrony--><div class="spaces"></div>
+                <a href="contact_SpaceBoots.html" class="nav">Contact</a><!--link do podstrony--><div class="spaces"></div>
+                <a href="#" class="nav">Profile</a><!--link do podstrony--><div class="spaces"></div>
+                <button id="themeSwitch"><img alt="light theme" class="themes" src="images/ikony/slonce.png"></button>
+        </nav>
+    </header>
+    <div class="main" id="home" style="margin-left: 100px;">
+    <style>
+        .container{
+    margin: 20px;
+    height: 200px;
+    float: left;
+    width: 200px;
+    background-color: #FFEA9461;
+    border-radius: 5%;
+    border: 5px solid black;
+    text-align: center;
+}
+.container h3{margin-bottom: 0;}
+.container h4{margin-top: 0;}
+.product_img_cont{
+    margin: 0px auto;
+    width: 200px;
+}
+.product_img{
+    width: 200px;
+}
+    </style>
+    <script>//idk im just trying
+    function add_block(){
+        let product_count=20; //define how many products it will be 
+        let name=new Array; //define array related to product name
+        let img_src=new Array; //define array related to product image
+        let price=new Array; //define array related to product price
+        
+        //temporal variables, later it will be connected to the database
+        name=img_src=price=["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"]; 
+        for(i=0;i<product_count;i++){ //adding products into html
+                    document.getElementById("home").innerHTML+=`
+                    <div class="container">
+                    <h3>`+name[i]+`</h3>
+                    <div id="div1" class="product_img_cont">
+                        <img class="product_img" src="images/buty/but`+img_src[i]+`.png">
+                    </div>
+                    <h4>`+price[i]+` zl</h4>
+                    </div>
+                    `}
+    }
+    add_block();
+    </script>
 
+    </div>
+    <style>
+        .filters h1{font-family: "Gravitas One", serif;}
+        .filters label{font-family: "Jaini", system-ui;font-size: 23px; margin: 10px;}
+        .filters input,select{width: 70px; font-family: Gelasio; font-size: 16px;}
+    </style>
+    <div class="filters">
+        <h1>Filters:</h1><!--will it be dynamic, made with js(i probably know how to make it)
+        or static, made with php querry(something like we've made on lessons)?-->
+        <table>
+            <tr>
+                <td><label for="size">Size:</label></td>
+                <td><input type="number" name="size" min="30" max="49"></td>
+            </tr>
+            <tr>
+                <td><label for="colour">Colour:</label></td>
+                <td><select name="colour">
+                    <option value="">Any</option>
+                    <option value="Black">Black</option>
+                    <option value="White">White</option>
+                    <option value="Blue">Blue</option>
+                    <option value="Brown">Brown</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td><label for="Type">Type:</label></td>
+                <td><select name="type">
+                    <option value="">Any</option>
+                    <option value="Sport">Sport</option>
+                    <option value="Buisness">Buisness</option>
+                    <option value="Winter">Winter</option>
+                    <option value="Casual">Casual</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td><label for="price">Price:</label></td>
+                <td><input type="number" name="price_st"><span style='font-family: "Gelasio"; margin: 0 5px;'>to</span><input type="number" name="price_en"></td>
+            </tr>
+        </table>
+    </div>
+    <footer id="homef">
+        <div class="footerlogo">
+            <a href="space_boots_home.html" class="logo"><img src="images/SpaceBoots_logo2.png"></a>
+        </div>
+
+        <div class="afterwords">
+            <table>
+                <tr><td><b>Topic</b></td><td><b>Topic</b></td><td><b>Topic</b></td></tr>
+                <tr><td><a href="">Page</a></td><td><a href="">Page</a></td><td><a href="">Page</a></td></tr>
+                <tr><td><a href="">Page</a></td><td><a href="">Page</a></td><td><a href="">Page</a></td></tr>
+                <tr><td><a href="">Page</a></td><td><a href="">Page</a></td><td><a href="">Page</a></td></tr>
+            </table>
+        </div>
+        
+        <div class="socials">
+            <ul>
+                <li><a href="#"><img src="images/ikony/facebook.png" alt="Facebook"></a></li>
+                <li><a href="#"><img src="images/ikony/instagram.png" alt="Instagram"></a></li>
+                <li><a href="#"><img src="images/ikony/twitter.png" alt="Twitter"></a></li>
+            </ul>
+        </div>
+        <div class="copyrights">
+            <h4>spaceboots&copy;, 2025</h4>
+        </div>
+    </footer>
+    
+</body>
+
+</html>
