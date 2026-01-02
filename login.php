@@ -1,13 +1,43 @@
 <?php
-include 'database/Connection.php'
+include 'database/Connection.php';
+
+$message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if(isset $_POST['username'])
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $stmt = $db -> prepare("SELECT password FROM clients WHERE username = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $stmt->store_result();
+
+    if ($stmt->num_rows > 0) {
+        $stmt->bind_result($db_password);
+        $stmt->fetch();
+
+        if(password_verify($password, $db_password)){
+            $message = "Login successful";
+            session_start();
+            $_SESSION['username'] = $username;
+            header("Location: profile.php");
+            exit();
+        } else {
+            $message = "Incorrect password";
+        }
+
+
+    } else {
+        $message = "Email not found";
+    }
+
+    $stmt->close();
+    $db->close();
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<!--robimy strone w jezyku angielskim-->
 <head>
     <meta charset="UTF-8">
     <title>SpaceBoots Login</title>
@@ -53,17 +83,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
            <h2><a href="">to make an order</a></h2> 
         </div>
         <div class="login_main">
-            <h1>Sign in</h1>
-            <form action="" onsubmit=""  method="post">
-            <input type="text" name="username" placeholder="| username"  style="font-size: 18px;">
-            <input type="text" name="email" placeholder="| email"  style="font-size: 18px;" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-            <input type="text" name="phone" placeholder="| phone number"  style="font-size: 18px;" pattern="^(?:\+48)? ?[0-9]{3}[ -]?[0-9]{3}[ -]?[0-9]{3}$">
-            <input type="password" name="password" pattern="(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*(),?\[\]{}<>]).{10,30}" placeholder="| password"  style="font-size: 18px;">
-            <input type="submit" name="reg" id="reg" value="Sign in">
+            <h1>Log in</h1>
+            <form action="" onsubmit="" method="post">
+                <?php if ($message): ?>
+                <?php echo $message; ?>
+                <?php endif; ?>
+                <input type="text" name="username" placeholder="| username" style="font-size: 18px;"  required>
+                <input type="password" name="password" placeholder="| password" style="font-size: 18px;"  required>
+                <a href="" id="log_password">Forgot password?</a>
+                <input type="submit" name="log_login_inp" id="log_login_inp" value="Log in">
             </form><br>
             <div class="line"></div><!--idk how to make those stripes-->
             <div style="margin-top: -27px;"><h2 id="orsign" style="background-color: #fff; display: block; width: fit-content; margin: auto;">OR</h2></div>
-            <h1><a href="login_SpaceBoots.html">Log in</a></h1>
+            <h1><a href="signin_SpaceBoots.html">Sign in</a></h1>
             <h4>Problems? <a href="contact_SpaceBoots.html">Contact us.</a></h4>
         </div>
     </div>
