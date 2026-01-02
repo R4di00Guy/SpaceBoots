@@ -95,13 +95,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </form><br>
             <div class="line"></div><!--idk how to make those stripes-->
             <div style="margin-top: -27px;"><h2 id="orsign" style="background-color: #fff; display: block; width: fit-content; margin: auto;">OR</h2></div>
-            <h1><a href="signin_SpaceBoots.html">Sign in</a></h1>
-            <h4>Problems? <a href="contact_SpaceBoots.html">Contact us.</a></h4>
+            <h1><a href="CreateAnAccount.php">Sign in</a></h1>
+            <h4>Problems? <a href="contact.html">Contact us.</a></h4>
         </div>
     </div>
     <footer id="homef">
         <div class="footerlogo">
-            <a href="space_boots_home.html" class="logo"><img src="images/SpaceBoots_logo2.png"></a>
+            <a href="home.html" class="logo"><img src="images/SpaceBoots_logo2.png"></a>
         </div>
 
         <div class="afterwords">
