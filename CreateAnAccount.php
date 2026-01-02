@@ -9,13 +9,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = $_POST['phone'];
     $password = $_POST['password'];
 
-    $qCheckEmail = $db -> prepare("SELECT email FROM clients WHERE email = ?");
+    $qCheckEmail = $db -> prepare("SELECT mail FROM clients WHERE mail = ?");
     $qCheckEmail -> bind_param("s", $email);
     $qCheckEmail -> execute();
     $qCheckEmail -> store_result();
 
     if ($checkEmailStmt->num_rows > 0) {
-        $message = "Email ID already exists";
+        $message = "Email already exists";
     }
     else {
         $stmt = $db -> prepare("INSERT INTO clients (login, mail, phone_nb, password) VALUES (?, ?, ?, ?)");
