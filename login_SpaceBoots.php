@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--robimy strone w jezyku angielskim-->
 <head>
     <meta charset="UTF-8">
-    <title>SpaceBoots About Us</title>
+    <title>SpaceBoots Login</title>
     <link href="styles.css" rel="stylesheet">
     <html lang="en">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,20 +34,31 @@
         <nav>
                 <a href="#" class="nav"><img id="cart" alt="shopping cart" src='images/ikony/koszyk.png'></a><!--koszyk--><div class="spaces"></div>
                 <a href="#" class="nav">Category</a><!--dropdown menu?--><div class="spaces"></div>
-                <span class="the_choosen_one"><a href="aboutus_SpaceBoots.html" class="nav">About us</a></span><!--link do podstrony--><div class="spaces"></div>
+                <a href="aboutus_SpaceBoots.html" class="nav">About us</a><!--link do podstrony--><div class="spaces"></div>
                 <a href="contact_SpaceBoots.html" class="nav">Contact</a><!--link do podstrony--><div class="spaces"></div>
-                <a href="login_SpaceBoots.php" class="nav">Profile</a><!--link do podstrony--><div class="spaces"></div>
+                <a href="#" class="nav">Profile</a><!--link do podstrony--><div class="spaces"></div>
                 <button id="themeSwitch"><img alt="light theme" class="themes" src="images/ikony/slonce.png"></button>
         </nav>
     </header>
-    <!-- <div class="mainholder"> -->
-        <div class="main">
-            <h2>About us</h2>
-            <p class="about_inf">
-                About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us About us 
-            </p><!--someone, who's good at making ai promts, make this part, please:/-->
+    <div class="main" id="log-sig">
+        <div class="login_head">
+           <h1>Log in  or Sign in</h1>
+           <h2><a href="">to make an order</a></h2> 
         </div>
-    <!-- </div> -->
+        <div class="login_main">
+            <h1>Log in</h1>
+            <form action="" onsubmit=""><!--idk what we'll do with this-->
+            <input type="text" name="log_email_inp" placeholder="| email or phone number" style="font-size: 18px;">
+            <input type="password" name="log_password_inp" placeholder="| password" style="font-size: 18px;">
+            <a href="" id="log_password">Forgot password?</a>
+            <input type="submit" name="log_login_inp" id="log_login_inp" value="Log in">
+            </form><br>
+            <div class="line"></div><!--idk how to make those stripes-->
+            <div style="margin-top: -27px;"><h2 id="orsign" style="background-color: #fff; display: block; width: fit-content; margin: auto;">OR</h2></div>
+            <h1><a href="signin_SpaceBoots.html">Sign in</a></h1>
+            <h4>Problems? <a href="contact_SpaceBoots.html">Contact us.</a></h4>
+        </div>
+    </div>
     <footer id="homef">
         <div class="footerlogo">
             <a href="space_boots_home.html" class="logo"><img src="images/SpaceBoots_logo2.png"></a>
