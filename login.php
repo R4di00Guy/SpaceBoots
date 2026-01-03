@@ -70,7 +70,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <!--logo--> 
         <nav>
                 <a href="#" class="nav"><img id="cart" alt="shopping cart" src='images/ikony/koszyk.png'></a><!--koszyk--><div class="spaces"></div>
-                <a href="#" class="nav">Category</a><!--dropdown menu?--><div class="spaces"></div>
                 <a href="aboutus.html" class="nav">About us</a><!--link do podstrony--><div class="spaces"></div>
                 <a href="contact.html" class="nav">Contact</a><!--link do podstrony--><div class="spaces"></div>
                 <a href="#" class="nav">Profile</a><!--link do podstrony--><div class="spaces"></div>

@@ -1,10 +1,17 @@
+
+<?php
+// session_start();
+include 'database/Connection.php';
+
+$query = "SELECT id_product, p_name, p_price, p_color, p_collection FROM products";
+$result = $db->query($query);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>SpaceBoots test Home page</title>
     <link href="styles.css" rel="stylesheet">
-    <html lang="en">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jaini&display=swap" rel="stylesheet">
@@ -25,12 +32,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 <script src="JavaScript/jquery-3.7.1.js"></script>
 <script src="JavaScript/scripts.js"></script>
+    <style>
+        .container{
+            margin: 20px;
+            height: 200px;
+            float: left;
+            width: 200px;
+            background-color: #FFEA9461;
+            border-radius: 5%;
+            border: 5px solid black;
+            text-align: center;
+        }
+        .container h3{margin-bottom: 0;}
+        .container h4{margin-top: 0;}
+        .product_img_cont{
+            margin: 0px auto;
+            width: 200px;
+        }
+        .product_img{
+            width: 200px;
+        }
+    </style>
 </head>
 <body>
     <header>
         <a href="home.html" class="logo"><img src="images/SpaceBoots_logo2.png"></a>
         <nav>
                 <a href="#" class="nav"><img id="cart" alt="shopping cart" src='images/ikony/koszyk.png'></a><div class="spaces"></div>
+                <a href="#" class="nav">Category</a><div class="spaces"></div>
                 <a href="aboutus.html" class="nav">About us</a><div class="spaces"></div>
                 <a href="contact.html" class="nav">Contact</a><div class="spaces"></div>
                 <a href="profile.php" class="nav">Profile</a><div class="spaces"></div>
@@ -38,27 +67,6 @@
         </nav>
     </header>
     <div class="main" id="home" style="margin-left: 100px;">
-    <style>
-        .container{
-    margin: 20px;
-    height: 200px;
-    float: left;
-    width: 200px;
-    background-color: #FFEA9461;
-    border-radius: 5%;
-    border: 5px solid black;
-    text-align: center;
-}
-.container h3{margin-bottom: 0;}
-.container h4{margin-top: 0;}
-.product_img_cont{
-    margin: 0px auto;
-    width: 200px;
-}
-.product_img{
-    width: 200px;
-}
-    </style>
 
     <script>
     function add_block(){

@@ -27,7 +27,7 @@ header{
 }
 /* nav do optymizacji */
 nav{
-    margin: 54px 16px 0px 0px;
+    margin: 16px 16px 0px 0px;
 }
 #themeSwitch{
     width: 31px;
@@ -51,7 +51,7 @@ nav{
 #cart{
     position: relative;
     width: 41px;
-    top: 2px;
+    top: 10px;
     filter: none;
 }
 h1{

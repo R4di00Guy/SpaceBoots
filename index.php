@@ -1,10 +1,17 @@
+
+<?php
+// session_start();
+include 'database/Connection.php';
+
+$query = "SELECT id_product, p_name, p_price, p_color, p_collection FROM products";
+$result = $db->query($query);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>SpaceBoots test Home page</title>
     <link href="styles.css" rel="stylesheet">
-    <html lang="en">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jaini&display=swap" rel="stylesheet">
@@ -25,6 +32,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 <script src="JavaScript/jquery-3.7.1.js"></script>
 <script src="JavaScript/scripts.js"></script>
+    <style>
+        .container {
+            margin: 20px 0px 8px 16px;
+            height: 267px;
+            float: left;
+            width: 21%;
+            background-color: #FFEA9461;
+            border-radius: 1%;
+            border: 5px solid black;
+            text-align: left;
+            overflow: hidden;
+            padding: 0px 0px 0px 1%;
+        }
+        .container h3{margin-bottom: 0;}
+        .container h4{margin-top: 0;}
+        .product_img_cont{
+            width: 142%;
+            position: relative;
+            max-height: 300px;
+            margin-bottom: 14px;
+        }
+        .product_img{
+            width: 200px;
+        }
+
+        .main::after { content: ""; display: table; clear: both; }
+    </style>
 </head>
 <body>
     <header>
@@ -38,49 +72,30 @@
         </nav>
     </header>
     <div class="main" id="home" style="margin-left: 100px;">
-    <style>
-        .container{
-    margin: 20px;
-    height: 200px;
-    float: left;
-    width: 200px;
-    background-color: #FFEA9461;
-    border-radius: 5%;
-    border: 5px solid black;
-    text-align: center;
-}
-.container h3{margin-bottom: 0;}
-.container h4{margin-top: 0;}
-.product_img_cont{
-    margin: 0px auto;
-    width: 200px;
-}
-.product_img{
-    width: 200px;
-}
-    </style>
 
-    <script>
-    function add_block(){
-        let product_count=20; 
-        let name=new Array; 
-        let img_src=new Array; 
-        let price=new Array; 
-        
-        name=img_src=price=["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"]; 
-        for(i=0;i<product_count;i++){
-                    document.getElementById("home").innerHTML+=`
-                    <div class="container">
-                    <h3>`+name[i]+`</h3>
-                    <div id="div1" class="product_img_cont">
-                        <img class="product_img" src="images/buty/but`+img_src[i]+`.png">
+    <?php
+        if ($result && $result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                ?>
+                <div class="container">
+                    <h3><?php echo htmlspecialchars($row['p_name']); ?></h3>
+                    
+                    <div class="product_img_cont">
+                        <img class="product_img" src="images/buty/but<?php echo $row['id_product']; ?>.png" alt="boots">
                     </div>
-                    <h4>`+price[i]+` zl</h4>
-                    </div>
-                    `}
-    }
-    add_block();
-    </script>
+                    
+                    <h4><?php echo $row['p_price']; ?> zl</h4>
+                    
+                    <?php if(isset($_SESSION['username'])): ?>
+                         <button style="font-family: 'Inter'; font-size: 10px; cursor: pointer;">Add to cart</button>
+                    <?php endif; ?>
+                </div>
+                <?php
+            }
+        } else {
+            echo "<p>No products found.</p>";
+        }
+        ?>
 
     </div>
     <style>
@@ -150,3 +165,5 @@
 </body>
 
 </html>
+
+

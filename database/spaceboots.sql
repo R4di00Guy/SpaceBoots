@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2025 at 04:12 PM
+-- Generation Time: Jan 03, 2026 at 06:05 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -34,7 +34,7 @@ CREATE TABLE `clients` (
   `mail` varchar(60) NOT NULL,
   `phone_nb` varchar(15) NOT NULL,
   `login` varchar(60) NOT NULL,
-  `password` varchar(60) NOT NULL,
+  `password` varchar(30) NOT NULL,
   `address` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -44,15 +44,15 @@ CREATE TABLE `clients` (
 
 INSERT INTO `clients` (`id_client`, `name`, `surname`, `mail`, `phone_nb`, `login`, `password`, `address`) VALUES
 (0, '', 'Maddie', '', '', '', '', ''),
-(1, 'Cindra', 'Maddie', 'csheffield0@ox.ac.uk', '+63-130-493-884', 'login', 'kL7*t~@z87Rt,x', '12th Floor'),
-(2, 'Regine', 'Henstridge', 'rtolemache1@nydailynews.com', '+1-703-947-2193', 'login', 'oW6`O\'%.L', 'Suite 43'),
-(3, 'Tate', 'Stannislawski', 'tpearsall2@admin.ch', '+230-182-746-69', 'login', 'kA2(B%o__tlFljzo', '15th Floor'),
-(4, 'Deb', 'Thorsen', 'drolley3@dot.gov', '+86-595-640-244', 'login', 'eZ3<F?z9rJ=ego', 'Suite 98'),
-(5, 'Tiler', 'Josifovic', 'tshirt4@webnode.com', '+58-307-842-294', 'login', 'dJ3!SsgYQXYX1', 'PO Box 52541'),
-(6, 'Eldon', 'Karpinski', 'ewillcott5@webnode.com', '+86-978-713-965', 'login', 'bK3?vTJQYbR\'SC*A', 'Apt 635'),
-(7, 'Lynne', 'Mulder', 'lhawkeridge6@yahoo.co.jp', '+504-903-499-52', 'login', 'uT4.v4kpQHaU$66)', '5th Floor'),
-(8, 'Jorgan', 'Bertin', 'jrosin7@foxnews.com', '+46-852-699-417', 'login', 'aJ4<\"8dQo\'J9', 'PO Box 44389'),
-(9, 'Molly', 'Craydon', 'mjepensen8@pcworld.com', '+63-179-345-067', 'login', 'oL6<#Opl', 'Suite 87');
+(1, 'Cindra', 'Maddie', 'csheffield0@ox.ac.uk', '+63-130-493-884', 'login1', '', '12th Floor'),
+(2, 'Regine', 'Henstridge', 'rtolemache1@nydailynews.com', '+1-703-947-2193', 'login2', '', 'Suite 43'),
+(3, 'Tate', 'Stannislawski', 'tpearsall2@admin.ch', '+230-182-746-69', 'login3', '', '15th Floor'),
+(4, 'Deb', 'Thorsen', 'drolley3@dot.gov', '+86-595-640-244', 'login4', '', 'Suite 98'),
+(5, 'Tiler', 'Josifovic', 'tshirt4@webnode.com', '+58-307-842-294', 'login5', '', 'PO Box 52541'),
+(6, 'Eldon', 'Karpinski', 'ewillcott5@webnode.com', '+86-978-713-965', 'login6', '', 'Apt 635'),
+(7, 'Lynne', 'Mulder', 'lhawkeridge6@yahoo.co.jp', '+504-903-499-52', 'login7', '', '5th Floor'),
+(8, 'Jorgan', 'Bertin', 'jrosin7@foxnews.com', '+46-852-699-417', 'login8', '', 'PO Box 44389'),
+(9, 'Molly', 'Craydon', 'mjepensen8@pcworld.com', '+63-179-345-067', 'login9', '', 'Suite 87');
 
 -- --------------------------------------------------------
 
@@ -93,8 +93,7 @@ INSERT INTO `orders` (`id_order`, `id_client`, `shopping_cart_id`, `arriving_dat
 CREATE TABLE `products` (
   `id_product` int(11) NOT NULL,
   `p_name` varchar(100) NOT NULL,
-  `p_price` decimal(4,2) NOT NULL,
-  `p_color` varchar(20) NOT NULL,
+  `p_price` decimal(5,2) NOT NULL,
   `p_collection` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -102,27 +101,27 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id_product`, `p_name`, `p_price`, `p_color`, `p_collection`) VALUES
-(1, '', 14.99, 'Khaki', ''),
-(2, '', 1.29, 'Purple', ''),
-(3, '', 5.49, 'Yellow', ''),
-(4, '', 4.49, 'Maroon', ''),
-(5, '', 3.79, 'Mauv', ''),
-(6, '', 4.79, 'Khaki', ''),
-(7, '', 3.79, 'Red', ''),
-(8, '', 1.79, 'Green', ''),
-(9, '', 6.99, 'Indigo', ''),
-(10, '', 49.99, 'Khaki', ''),
-(11, '', 99.99, 'Purple', ''),
-(12, '', 1.99, 'Violet', ''),
-(13, '', 3.29, 'Goldenrod', ''),
-(14, '', 3.29, 'Blue', ''),
-(15, '', 2.99, 'Red', ''),
-(16, '', 4.89, 'Aquamarine', ''),
-(17, '', 5.49, 'Mauv', ''),
-(18, '', 4.29, 'Purple', ''),
-(19, '', 3.49, 'Blue', ''),
-(20, '', 29.99, 'Khaki', '');
+INSERT INTO `products` (`id_product`, `p_name`, `p_price`, `p_collection`) VALUES
+(1, 'Athletic Sneakers \"Sheeps\"', 49.99, 'sport'),
+(2, 'Casual Shoes \"Mountain Goat\"', 44.99, 'casual'),
+(3, 'Cycling Shoes \"Move!\"', 39.99, 'sport'),
+(4, 'Casual Leather Shoes \"Pavement\"', 52.49, 'casual'),
+(5, 'Cycling Shoes \"SpeedUp\"', 39.99, 'sport'),
+(6, 'Combat Boots \"Bloom\"', 47.99, 'work'),
+(7, 'Platform Shoes \"GOAT\"', 61.99, 'casual'),
+(8, 'Steel-Toed Shoes \"Amazon\"', 59.99, 'work'),
+(9, 'Sneakers \"Paul\" (authorial)', 138.99, 'fashion'),
+(10, 'Low Boots \"Marko\"', 49.99, 'casual'),
+(11, 'Tennis Shoes \"Melon\"', 99.99, 'casual'),
+(12, 'Waterproof Work Boots \"Brom\"', 57.99, 'work'),
+(13, 'Oil Resistant Boots \"Michael\"', 49.99, 'casual'),
+(14, 'Light-weight Sport Shoes \"California\"', 44.99, 'sport'),
+(15, 'Slip-Ons \"Mausoleum\"', 39.99, 'sport'),
+(16, 'Sport Sneakers \"Patison\"', 54.99, 'sport'),
+(17, 'Sport Shoes With Platform \"Alzheimer\'s\"', 61.99, 'sport'),
+(18, 'Safety Toe Sneakers \"Turtle\"', 57.99, 'work'),
+(19, 'Waterproof Fashion Boots \"Sally\"', 119.99, 'fashion'),
+(20, 'Fashion Platform Sneakers \"Maggy\"', 59.99, 'fashion');
 
 -- --------------------------------------------------------
 
@@ -138,6 +137,171 @@ CREATE TABLE `shopping_cart` (
   `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sizes_colors`
+--
+
+CREATE TABLE `sizes_colors` (
+  `id` int(11) NOT NULL,
+  `id_product` int(11) NOT NULL,
+  `colors` varchar(30) NOT NULL,
+  `sizes` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `sizes_colors`
+--
+
+INSERT INTO `sizes_colors` (`id`, `id_product`, `colors`, `sizes`) VALUES
+(1, 1, 'white', 36),
+(2, 1, 'white', 37),
+(3, 1, 'white', 38),
+(4, 1, 'white', 39),
+(5, 1, 'white', 40),
+(6, 1, 'white', 41),
+(7, 1, 'white', 42),
+(8, 2, 'brown', 38),
+(9, 2, 'brown', 39),
+(10, 2, 'brown', 40),
+(11, 2, 'brown', 41),
+(12, 2, 'brown', 42),
+(13, 2, 'brown', 43),
+(14, 2, 'brown', 44),
+(15, 3, 'black', 35),
+(16, 3, 'black', 36),
+(17, 3, 'black', 37),
+(18, 3, 'black', 38),
+(19, 3, 'black', 39),
+(20, 3, 'black', 40),
+(21, 3, 'black', 41),
+(22, 3, 'black', 42),
+(23, 3, 'black', 43),
+(24, 4, 'black', 38),
+(25, 4, 'black', 39),
+(26, 4, 'black', 40),
+(27, 4, 'black', 41),
+(28, 4, 'black', 42),
+(29, 4, 'black', 43),
+(30, 4, 'black', 44),
+(31, 4, 'black', 45),
+(32, 5, 'black', 37),
+(33, 5, 'black', 38),
+(34, 5, 'black', 39),
+(35, 5, 'black', 40),
+(36, 5, 'black', 41),
+(37, 5, 'black', 42),
+(38, 5, 'black', 43),
+(39, 5, 'black', 44),
+(40, 5, 'black', 45),
+(41, 5, 'black', 46),
+(42, 6, 'white', 38),
+(43, 6, 'white', 39),
+(44, 6, 'white', 40),
+(45, 6, 'white', 41),
+(46, 6, 'white', 42),
+(47, 6, 'white', 43),
+(48, 6, 'white', 44),
+(49, 6, 'white', 45),
+(50, 7, 'brown', 38),
+(51, 7, 'brown', 39),
+(52, 7, 'brown', 40),
+(53, 7, 'brown', 41),
+(54, 7, 'brown', 42),
+(55, 7, 'brown', 43),
+(56, 8, 'black', 39),
+(57, 8, 'black', 40),
+(58, 8, 'black', 41),
+(59, 8, 'black', 42),
+(60, 8, 'black', 43),
+(61, 8, 'black', 44),
+(62, 8, 'black', 45),
+(63, 9, 'black', 40),
+(64, 9, 'black', 41),
+(65, 9, 'black', 42),
+(66, 9, 'black', 43),
+(67, 9, 'black', 44),
+(68, 9, 'black', 45),
+(69, 9, 'black', 46),
+(70, 10, 'black', 37),
+(71, 10, 'black', 38),
+(72, 10, 'black', 39),
+(73, 10, 'black', 40),
+(74, 10, 'black', 41),
+(75, 10, 'black', 42),
+(76, 10, 'black', 43),
+(77, 10, 'black', 44),
+(78, 10, 'black', 45),
+(79, 10, 'black', 46),
+(80, 11, 'black', 35),
+(81, 11, 'black', 36),
+(82, 11, 'black', 37),
+(83, 11, 'black', 38),
+(84, 11, 'black', 39),
+(85, 11, 'black', 40),
+(86, 11, 'black', 41),
+(87, 11, 'black', 42),
+(88, 11, 'black', 43),
+(89, 11, 'black', 44),
+(90, 12, 'brown', 36),
+(91, 12, 'brown', 37),
+(92, 12, 'brown', 38),
+(93, 12, 'brown', 39),
+(94, 12, 'brown', 40),
+(95, 12, 'brown', 41),
+(96, 12, 'brown', 42),
+(97, 12, 'brown', 43),
+(98, 12, 'brown', 44),
+(99, 13, 'black', 38),
+(100, 13, 'black', 38),
+(101, 13, 'black', 39),
+(102, 13, 'black', 39),
+(103, 13, 'black', 40),
+(104, 13, 'black', 40),
+(105, 13, 'black', 41),
+(106, 13, 'black', 41),
+(107, 13, 'black', 42),
+(108, 13, 'black', 42),
+(109, 13, 'black', 43),
+(110, 13, 'black', 43),
+(111, 13, 'black', 44),
+(112, 13, 'black', 44),
+(113, 13, 'black', 45),
+(114, 14, 'black', 39),
+(115, 14, 'black', 40),
+(116, 14, 'black', 41),
+(117, 14, 'black', 42),
+(118, 14, 'black', 43),
+(119, 14, 'black', 44),
+(120, 14, 'black', 45),
+(121, 15, 'black', 36),
+(122, 15, 'black', 37),
+(123, 15, 'black', 38),
+(124, 15, 'black', 39),
+(125, 15, 'black', 40),
+(126, 15, 'black', 41),
+(127, 15, 'black', 42),
+(128, 15, 'black', 43),
+(129, 16, 'black', 40),
+(130, 16, 'black', 41),
+(131, 17, 'black', 40),
+(132, 17, 'black', 38),
+(133, 18, 'black', 39),
+(134, 18, 'black', 40),
+(135, 18, 'black', 41),
+(136, 18, 'black', 42),
+(137, 18, 'black', 43),
+(138, 19, 'white', 41),
+(139, 20, 'black', 37),
+(140, 20, 'black', 38),
+(141, 20, 'black', 39),
+(142, 20, 'black', 40),
+(143, 20, 'black', 41),
+(144, 20, 'black', 42),
+(145, 20, 'black', 43),
+(146, 20, 'black', 44);
+
 --
 -- Indexes for dumped tables
 --
@@ -146,7 +310,12 @@ CREATE TABLE `shopping_cart` (
 -- Indexes for table `clients`
 --
 ALTER TABLE `clients`
-  ADD PRIMARY KEY (`id_client`);
+  ADD PRIMARY KEY (`id_client`),
+  ADD UNIQUE KEY `login` (`login`),
+  ADD UNIQUE KEY `login_2` (`login`),
+  ADD UNIQUE KEY `login_3` (`login`),
+  ADD UNIQUE KEY `mail` (`mail`),
+  ADD UNIQUE KEY `phone_nb` (`phone_nb`);
 
 --
 -- Indexes for table `orders`
@@ -158,12 +327,19 @@ ALTER TABLE `orders`
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`id_product`);
+  ADD PRIMARY KEY (`id_product`),
+  ADD UNIQUE KEY `id_product` (`id_product`);
 
 --
 -- Indexes for table `shopping_cart`
 --
 ALTER TABLE `shopping_cart`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `sizes_colors`
+--
+ALTER TABLE `sizes_colors`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -187,6 +363,12 @@ ALTER TABLE `products`
 --
 ALTER TABLE `shopping_cart`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `sizes_colors`
+--
+ALTER TABLE `sizes_colors`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
