@@ -42,6 +42,7 @@ nav{
     /* color: #FFDF0E; */
     /* padding-bottom: 25px; */
     line-height: 0px;
+    cursor: pointer;
 }
 .themes{
     position: relative;

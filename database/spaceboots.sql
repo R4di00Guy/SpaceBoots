@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 03, 2026 at 06:05 PM
+-- Generation Time: Jan 03, 2026 at 07:24 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -93,6 +93,7 @@ INSERT INTO `orders` (`id_order`, `id_client`, `shopping_cart_id`, `arriving_dat
 CREATE TABLE `products` (
   `id_product` int(11) NOT NULL,
   `p_name` varchar(100) NOT NULL,
+  `p_amount` int(3) NOT NULL,
   `p_price` decimal(5,2) NOT NULL,
   `p_collection` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -101,27 +102,27 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id_product`, `p_name`, `p_price`, `p_collection`) VALUES
-(1, 'Athletic Sneakers \"Sheeps\"', 49.99, 'sport'),
-(2, 'Casual Shoes \"Mountain Goat\"', 44.99, 'casual'),
-(3, 'Cycling Shoes \"Move!\"', 39.99, 'sport'),
-(4, 'Casual Leather Shoes \"Pavement\"', 52.49, 'casual'),
-(5, 'Cycling Shoes \"SpeedUp\"', 39.99, 'sport'),
-(6, 'Combat Boots \"Bloom\"', 47.99, 'work'),
-(7, 'Platform Shoes \"GOAT\"', 61.99, 'casual'),
-(8, 'Steel-Toed Shoes \"Amazon\"', 59.99, 'work'),
-(9, 'Sneakers \"Paul\" (authorial)', 138.99, 'fashion'),
-(10, 'Low Boots \"Marko\"', 49.99, 'casual'),
-(11, 'Tennis Shoes \"Melon\"', 99.99, 'casual'),
-(12, 'Waterproof Work Boots \"Brom\"', 57.99, 'work'),
-(13, 'Oil Resistant Boots \"Michael\"', 49.99, 'casual'),
-(14, 'Light-weight Sport Shoes \"California\"', 44.99, 'sport'),
-(15, 'Slip-Ons \"Mausoleum\"', 39.99, 'sport'),
-(16, 'Sport Sneakers \"Patison\"', 54.99, 'sport'),
-(17, 'Sport Shoes With Platform \"Alzheimer\'s\"', 61.99, 'sport'),
-(18, 'Safety Toe Sneakers \"Turtle\"', 57.99, 'work'),
-(19, 'Waterproof Fashion Boots \"Sally\"', 119.99, 'fashion'),
-(20, 'Fashion Platform Sneakers \"Maggy\"', 59.99, 'fashion');
+INSERT INTO `products` (`id_product`, `p_name`, `p_amount`, `p_price`, `p_collection`) VALUES
+(1, 'Athletic Sneakers \"Sheeps\"', 2, 49.99, 'sport'),
+(2, 'Casual Shoes \"Mountain Goat\"', 18, 44.99, 'casual'),
+(3, 'Cycling Shoes \"Move!\"', 28, 39.99, 'sport'),
+(4, 'Casual Leather Shoes \"Pavement\"', 45, 52.49, 'casual'),
+(5, 'Cycling Shoes \"SpeedUp\"', 102, 39.99, 'sport'),
+(6, 'Combat Boots \"Bloom\"', 13, 47.99, 'work'),
+(7, 'Platform Shoes \"GOAT\"', 65, 61.99, 'casual'),
+(8, 'Steel-Toed Shoes \"Amazon\"', 79, 59.99, 'work'),
+(9, 'Sneakers \"Paul\" (authorial)', 2, 138.99, 'fashion'),
+(10, 'Low Boots \"Marko\"', 5, 49.99, 'casual'),
+(11, 'Tennis Shoes \"Melon\"', 82, 99.99, 'casual'),
+(12, 'Waterproof Work Boots \"Brom\"', 71, 57.99, 'work'),
+(13, 'Oil Resistant Boots \"Michael\"', 14, 49.99, 'casual'),
+(14, 'Light-weight Sport Shoes \"California\"', 22, 44.99, 'sport'),
+(15, 'Slip-Ons \"Mausoleum\"', 21, 39.99, 'sport'),
+(16, 'Sport Sneakers \"Patison\"', 13, 54.99, 'sport'),
+(17, 'Sport Shoes With Platform \"Alzheimer\'s\"', 0, 61.99, 'sport'),
+(18, 'Safety Toe Sneakers \"Turtle\"', 16, 57.99, 'work'),
+(19, 'Waterproof Fashion Boots \"Sally\"', 1, 119.99, 'fashion'),
+(20, 'Fashion Platform Sneakers \"Maggy\"', 34, 59.99, 'fashion');
 
 -- --------------------------------------------------------
 

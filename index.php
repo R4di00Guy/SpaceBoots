@@ -73,9 +73,12 @@ $result = $db->query($sql);
             text-align: left;
             overflow: hidden;
             padding: 0px 0px 0px 1%;
+
+            display: flex;
+            flex-direction: column;
         }
         .container h3{margin-bottom: 0;}
-        .container h4{margin-top: 0;}
+        /* .container h4{margin-top: 0;} */
         .product_img_cont{
             width: 142%;
             position: relative;
@@ -85,13 +88,17 @@ $result = $db->query($sql);
         .product_img{
             width: 200px;
         }
+        h4{
+            margin-top: auto;
+            margin-bottom: 6px;
+        }
 
         .main::after { content: ""; display: table; clear: both; }
     </style>
 </head>
 <body>
     <header>
-        <a href="home.html" class="logo"><img src="images/SpaceBoots_logo2.png"></a>
+        <a href="index.php" class="logo"><img src="images/SpaceBoots_logo2.png"></a>
         <nav>
                 <a href="#" class="nav"><img id="cart" alt="shopping cart" src='images/ikony/koszyk.png'></a><div class="spaces"></div>
                 <a href="aboutus.html" class="nav">About us</a><div class="spaces"></div>
