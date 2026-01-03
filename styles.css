@@ -272,14 +272,16 @@ div.main{
 /* bloczek najeżdża na footer: trzeba naprawić */
 div.filters{
     width: auto;
-    /* min-height: 400px; turned it off, cause it was making me mad:)*/ 
-    height: 250px;
+    /* min-height: 400px; */
+    height: auto;
     border: 5px solid black;
     margin: 16px 16px 16px 0px;
     float: right;
     top: 0;
     position: sticky;
     top: 20px;
+    min-width: 322px;
+    padding: 0px 0px 13px 10px;
 }
 footer{
     height: 300px;
