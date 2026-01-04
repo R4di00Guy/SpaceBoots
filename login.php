@@ -1,11 +1,13 @@
 <?php
 include 'database/Connection.php';
-
+session_start();
 $message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $login = $_POST['login'];
     $password = $_POST['password'];
+
+// $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     $stmt = $db -> prepare("SELECT password FROM clients WHERE login = ?");
     $stmt->bind_param("s", $login);
@@ -18,17 +20,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if(password_verify($password, $db_password)){
             $message = "Login successful";
-            session_start();
+            // session_start();
             $_SESSION['login'] = $login;
-            // header("Location: profile.php");
+            header("Location: profile.php");
             exit();
         } else {
             $message = "Incorrect password";
+            $error_class = "input-error";
         }
 
 
     } else {
-        $message = "Email not found";
+        $message = "Login not found";
+        $error_class = "input-error";
     }
 
     $stmt->close();
@@ -42,7 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <title>SpaceBoots Login</title>
     <link href="styles.css" rel="stylesheet">
-    <html lang="en">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jaini&display=swap" rel="stylesheet">
@@ -77,6 +80,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         input:not(:placeholder-shown):valid {
             border: 2px solid #2ecc71;
         }
+
+
+        .input-error {
+            color: #ff4d4d;
+            text-decoration: underline;
+            /* background-color: #fff5f5; */
+            font-weight: bold; 
+            font-size: 18px
+        }
     </style>
 </head>
 <body>
@@ -100,7 +112,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h1>Log in</h1>
             <form action="" onsubmit="" method="post">
                 <?php if ($message): ?>
-                <?php echo $message; ?>
+                    <h5 class="input-error"><?php echo $message; ?></h5>
+                    <!-- <?php echo $message; ?> -->
                 <?php endif; ?>
                 <input type="text" name="login" placeholder="| login" style="font-size: 18px;" pattern="(?=.*[a-z])[a-z0-9]{3,20}" required>
                 <input type="password" name="password" placeholder="| password" style="font-size: 18px;" pattern="(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*(),?\[\]{}<>]).{10,30}" required>

@@ -2,6 +2,8 @@
     session_start(); 
     include 'database/Connection.php';
 
+    
+
     $collections = $db->query("SELECT DISTINCT p_collection FROM products");
     $colors = $db->query("SELECT DISTINCT colors FROM sizes_colors");
     $sizes = $db->query("SELECT DISTINCT sizes FROM sizes_colors ORDER BY sizes ASC");
@@ -89,10 +91,6 @@
                         </div>
                     </a>
                     <h4><?php echo $row['p_price']; ?> zł</h4>
-                    
-                    <?php if(isset($_SESSION['login'])): ?>
-                         <button style="font-family: 'Inter'; font-size: 10px; cursor: pointer;">Add to cart</button>
-                    <?php endif; ?>
                 </div>
                 <?php
             }

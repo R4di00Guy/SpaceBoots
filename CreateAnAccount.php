@@ -9,26 +9,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = $_POST['phone'];
     $password = $_POST['password'];
 
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+
+    $qCheckLogin = $db -> prepare("SELECT login FROM clients WHERE login = ?");
+    $qCheckLogin -> bind_param("s", $login);
+    $qCheckLogin -> execute();
+    $qCheckLogin -> store_result();
+
     $qCheckEmail = $db -> prepare("SELECT mail FROM clients WHERE mail = ?");
     $qCheckEmail -> bind_param("s", $email);
     $qCheckEmail -> execute();
     $qCheckEmail -> store_result();
 
-    if ($checkEmailStmt->num_rows > 0) {
-        $message = "Email already exists";
+    if ($qCheckLogin->num_rows > 0) {
+        $message = "<h5 class='error'>Login already exists</h5>";
     }
+    else if($qCheckEmail->num_rows > 0) {
+        $message = "<h5 class='error'>Email already exists</h5>";
+        }
     else {
         $stmt = $db -> prepare("INSERT INTO clients (login, mail, phone_nb, password) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("sss", $login, $email, $phone, $password);
+        $stmt->bind_param("ssss", $login, $email, $phone, $hashed_password);
 
         if ($stmt->execute()) {
-            $message = "Account created successfully";
+            $message = "<h5 class='correct'>Account created successfully</h5>";
         } else {
-            $message = "Error: " . $stmt->error;
+            $message = "<h5 class='error'>Error: " . $stmt->error . "</h5>";
         }
 
         $stmt->close();
-    }
+        }
+   
 
     $qCheckEmail->close();
     $db->close();
@@ -75,6 +87,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         input:not(:placeholder-shown):valid {
             border: 2px solid #2ecc71;
         }
+
+
+        .error, .correct {
+            /* background-color: #fff5f5; */
+            font-weight: bold; 
+            font-size: 18px
+        }
+        .error{
+            color: #ff4d4d;
+            text-decoration: underline;
+        }
+        .correct{
+            color: #2ecc71;
+        }
     </style>
 </head>
 <body>
@@ -82,10 +108,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <a href="index.php" class="logo"><img src="images/SpaceBoots_logo2.png"></a>
         <!--logo--> 
         <nav>
-                <a href="#" class="nav"><img id="cart" alt="shopping cart" src='images/ikony/koszyk.png'></a><!--koszyk--><div class="spaces"></div>
-                <a href="aboutus.html" class="nav">About us</a><!--link do podstrony--><div class="spaces"></div>
-                <a href="contact.html" class="nav">Contact</a><!--link do podstrony--><div class="spaces"></div>
-                <a href="profile.php" class="nav">Profile</a><!--link do podstrony--><div class="spaces"></div>
+                <a href="#" class="nav"><img id="cart" alt="shopping cart" src='images/ikony/koszyk.png'></a><div class="spaces"></div>
+                <a href="aboutus.html" class="nav">About us</a><div class="spaces"></div>
+                <a href="contact.html" class="nav">Contact</a><div class="spaces"></div>
+                <span class="the_choosen_one"><a href="profile.php" class="nav">Profile</a></span><div class="spaces"></div>
                 <button id="themeSwitch"><img alt="light theme" class="themes" src="images/ikony/slonce.png"></button>
         </nav>
     </header>
@@ -97,14 +123,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="login_main">
             <h1>Sign in</h1>
             <?php if ($message): ?>
-            <?php echo $message; ?>
+                <?php echo $message; ?>
             <?php endif; ?>
             <form action="" onsubmit=""  method="post">
-                <input type="text" name="login" placeholder="| login"  style="font-size: 18px;" pattern="(?=.*[a-z])[z-z0-9]{3,20}" required>
+                <input type="text" name="login" placeholder="| login"  style="font-size: 18px;" pattern="(?=.*[a-z])[a-z0-9]{3,20}" required>
                 <input type="text" name="email" placeholder="| email"  style="font-size: 18px;" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
                 <input type="text" name="phone" placeholder="| phone number"  style="font-size: 18px;" pattern="^(?:\+48)? ?[0-9]{3}[ -]?[0-9]{3}[ -]?[0-9]{3}$" required>
                 <input type="password" name="password" pattern="(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*(),?\[\]{}<>]).{10,30}" placeholder="| password"  style="font-size: 18px;" required>
-                <input type="submit" name="reg" id="reg" value="Create an account>
+                <input type="submit" name="reg" id="reg" value="Create an account">
             </form><br>
             <div class="line"></div>
             <div style="margin-top: -27px;"><h2 id="orsign" style="background-color: #fff; display: block; width: fit-content; margin: auto;">OR</h2></div>

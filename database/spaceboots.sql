@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 03, 2026 at 07:24 PM
+-- Generation Time: Jan 04, 2026 at 07:23 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -32,9 +32,9 @@ CREATE TABLE `clients` (
   `name` varchar(25) NOT NULL,
   `surname` varchar(30) NOT NULL,
   `mail` varchar(60) NOT NULL,
-  `phone_nb` varchar(15) NOT NULL,
+  `phone_nb` varchar(12) NOT NULL,
   `login` varchar(60) NOT NULL,
-  `password` varchar(30) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `address` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -43,16 +43,8 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`id_client`, `name`, `surname`, `mail`, `phone_nb`, `login`, `password`, `address`) VALUES
-(0, '', 'Maddie', '', '', '', '', ''),
-(1, 'Cindra', 'Maddie', 'csheffield0@ox.ac.uk', '+63-130-493-884', 'login1', '', '12th Floor'),
-(2, 'Regine', 'Henstridge', 'rtolemache1@nydailynews.com', '+1-703-947-2193', 'login2', '', 'Suite 43'),
-(3, 'Tate', 'Stannislawski', 'tpearsall2@admin.ch', '+230-182-746-69', 'login3', '', '15th Floor'),
-(4, 'Deb', 'Thorsen', 'drolley3@dot.gov', '+86-595-640-244', 'login4', '', 'Suite 98'),
-(5, 'Tiler', 'Josifovic', 'tshirt4@webnode.com', '+58-307-842-294', 'login5', '', 'PO Box 52541'),
-(6, 'Eldon', 'Karpinski', 'ewillcott5@webnode.com', '+86-978-713-965', 'login6', '', 'Apt 635'),
-(7, 'Lynne', 'Mulder', 'lhawkeridge6@yahoo.co.jp', '+504-903-499-52', 'login7', '', '5th Floor'),
-(8, 'Jorgan', 'Bertin', 'jrosin7@foxnews.com', '+46-852-699-417', 'login8', '', 'PO Box 44389'),
-(9, 'Molly', 'Craydon', 'mjepensen8@pcworld.com', '+63-179-345-067', 'login9', '', 'Suite 87');
+(1, '', '', 'blablabla@gmail.com', '+48777777777', 'login1', '$2y$10$MpgDYov2vqzjcz3J78GP2uZhEW3ogKo5aQIj3S1xflwldy7bddHLy', ''),
+(5, '', '', 'blablabla2@gmail.com', '+48777777777', 'login2', '$2y$10$DdvoYkCrMR/Hp6aS4VEyR.LY5bJCNIgGfTIPCjM9NTa2BT6PH8vUO', '');
 
 -- --------------------------------------------------------
 
@@ -135,7 +127,8 @@ CREATE TABLE `shopping_cart` (
   `id_client` int(11) NOT NULL,
   `id_product` int(11) NOT NULL,
   `amount` int(11) NOT NULL,
-  `id` int(11) NOT NULL
+  `p_size` int(2) NOT NULL,
+  `p_color` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -315,8 +308,7 @@ ALTER TABLE `clients`
   ADD UNIQUE KEY `login` (`login`),
   ADD UNIQUE KEY `login_2` (`login`),
   ADD UNIQUE KEY `login_3` (`login`),
-  ADD UNIQUE KEY `mail` (`mail`),
-  ADD UNIQUE KEY `phone_nb` (`phone_nb`);
+  ADD UNIQUE KEY `mail` (`mail`);
 
 --
 -- Indexes for table `orders`
@@ -332,12 +324,6 @@ ALTER TABLE `products`
   ADD UNIQUE KEY `id_product` (`id_product`);
 
 --
--- Indexes for table `shopping_cart`
---
-ALTER TABLE `shopping_cart`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `sizes_colors`
 --
 ALTER TABLE `sizes_colors`
@@ -346,6 +332,12 @@ ALTER TABLE `sizes_colors`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `clients`
+--
+ALTER TABLE `clients`
+  MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `orders`
@@ -358,12 +350,6 @@ ALTER TABLE `orders`
 --
 ALTER TABLE `products`
   MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
-
---
--- AUTO_INCREMENT for table `shopping_cart`
---
-ALTER TABLE `shopping_cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `sizes_colors`
