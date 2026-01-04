@@ -4,11 +4,11 @@ include 'database/Connection.php';
 $message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
+    $login = $_POST['login'];
     $password = $_POST['password'];
 
-    $stmt = $db -> prepare("SELECT password FROM clients WHERE username = ?");
-    $stmt->bind_param("s", $username);
+    $stmt = $db -> prepare("SELECT password FROM clients WHERE login = ?");
+    $stmt->bind_param("s", $login);
     $stmt->execute();
     $stmt->store_result();
 
@@ -19,8 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if(password_verify($password, $db_password)){
             $message = "Login successful";
             session_start();
-            $_SESSION['username'] = $username;
-            header("Location: profile.php");
+            $_SESSION['login'] = $login;
+            // header("Location: profile.php");
             exit();
         } else {
             $message = "Incorrect password";
@@ -61,8 +61,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-<script src="JavaScript/jquery-3.7.1.js"></script>
-<script src="JavaScript/scripts.js"></script>
+    <script src="JavaScript/jquery-3.7.1.js"></script>
+    <script src="JavaScript/scripts.js"></script>
+    <style>
+        input:not(:placeholder-shown):invalid {
+            border: 2px solid #ff4d4d !important;
+            background-color: #fff5f5;
+        }
+
+        input:focus:invalid {
+            outline: none;
+            box-shadow: 0 0 5px #ff4d4d;
+        }
+
+        input:not(:placeholder-shown):valid {
+            border: 2px solid #2ecc71;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -87,14 +102,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php if ($message): ?>
                 <?php echo $message; ?>
                 <?php endif; ?>
-                <input type="text" name="username" placeholder="| username" style="font-size: 18px;"  required>
-                <input type="password" name="password" placeholder="| password" style="font-size: 18px;"  required>
+                <input type="text" name="login" placeholder="| login" style="font-size: 18px;" pattern="(?=.*[a-z])[a-z0-9]{3,20}" required>
+                <input type="password" name="password" placeholder="| password" style="font-size: 18px;" pattern="(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*(),?\[\]{}<>]).{10,30}" required>
                 <a href="" id="log_password">Forgot password?</a>
                 <input type="submit" name="log_login_inp" id="log_login_inp" value="Log in">
             </form><br>
-            <div class="line"></div><!--idk how to make those stripes-->
+            <div class="line"></div>
             <div style="margin-top: -27px;"><h2 id="orsign" style="background-color: #fff; display: block; width: fit-content; margin: auto;">OR</h2></div>
-            <h1><a href="CreateAnAccount.php">Sign in</a></h1>
+            <h1><a href="CreateAnAccount.php">Create an account</a></h1>
             <h4>Problems? <a href="contact.html">Contact us.</a></h4>
         </div>
     </div>

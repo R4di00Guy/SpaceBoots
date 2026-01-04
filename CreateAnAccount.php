@@ -4,7 +4,7 @@ include 'database/Connection.php';
 $message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
+    $login = $_POST['login'];
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $password = $_POST['password'];
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     else {
         $stmt = $db -> prepare("INSERT INTO clients (login, mail, phone_nb, password) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("sss", $username, $email, $phone, $password);
+        $stmt->bind_param("sss", $login, $email, $phone, $password);
 
         if ($stmt->execute()) {
             $message = "Account created successfully";
@@ -59,8 +59,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-<script src="JavaScript/jquery-3.7.1.js"></script>
-<script src="JavaScript/scripts.js"></script>
+    <script src="JavaScript/jquery-3.7.1.js"></script>
+    <script src="JavaScript/scripts.js"></script>
+    <style>
+        input:not(:placeholder-shown):invalid {
+            border: 2px solid #ff4d4d !important;
+            background-color: #fff5f5;
+        }
+
+        input:focus:invalid {
+            outline: none;
+            box-shadow: 0 0 5px #ff4d4d;
+        }
+
+        input:not(:placeholder-shown):valid {
+            border: 2px solid #2ecc71;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -85,15 +100,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <?php echo $message; ?>
             <?php endif; ?>
             <form action="" onsubmit=""  method="post">
-                <input type="text" name="username" placeholder="| username"  style="font-size: 18px;" required>
+                <input type="text" name="login" placeholder="| login"  style="font-size: 18px;" pattern="(?=.*[a-z])[z-z0-9]{3,20}" required>
                 <input type="text" name="email" placeholder="| email"  style="font-size: 18px;" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
                 <input type="text" name="phone" placeholder="| phone number"  style="font-size: 18px;" pattern="^(?:\+48)? ?[0-9]{3}[ -]?[0-9]{3}[ -]?[0-9]{3}$" required>
                 <input type="password" name="password" pattern="(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*(),?\[\]{}<>]).{10,30}" placeholder="| password"  style="font-size: 18px;" required>
                 <input type="submit" name="reg" id="reg" value="Create an account>
             </form><br>
-            <div class="line"></div><!--idk how to make those stripes-->
+            <div class="line"></div>
             <div style="margin-top: -27px;"><h2 id="orsign" style="background-color: #fff; display: block; width: fit-content; margin: auto;">OR</h2></div>
-            <h1><a href="login.html">Log in</a></h1>
+            <h1><a href="login.php">Log in</a></h1>
             <h4>Problems? <a href="contact.html">Contact us.</a></h4>
         </div>
     </div>

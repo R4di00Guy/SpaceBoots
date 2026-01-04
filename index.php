@@ -1,39 +1,39 @@
 <?php
-session_start(); 
-include 'database/Connection.php';
+    session_start(); 
+    include 'database/Connection.php';
 
-$collections = $db->query("SELECT DISTINCT p_collection FROM products");
-$colors = $db->query("SELECT DISTINCT colors FROM sizes_colors");
-$sizes = $db->query("SELECT DISTINCT sizes FROM sizes_colors ORDER BY sizes ASC");
+    $collections = $db->query("SELECT DISTINCT p_collection FROM products");
+    $colors = $db->query("SELECT DISTINCT colors FROM sizes_colors");
+    $sizes = $db->query("SELECT DISTINCT sizes FROM sizes_colors ORDER BY sizes ASC");
 
-$sql = "SELECT DISTINCT p.id_product, p.p_name, p.p_collection, MIN(p.p_price) as p_price 
-        FROM products p 
-        LEFT JOIN sizes_colors sc ON p.id_product = sc.id_product 
-        WHERE 1=1";
+    $sql = "SELECT DISTINCT p.id_product, p.p_name, p.p_collection, MIN(p.p_price) as p_price 
+            FROM products p 
+            LEFT JOIN sizes_colors sc ON p.id_product = sc.id_product 
+            WHERE 1=1";
 
-if (!empty($_GET['type'])) {
-    $type = $db->real_escape_string($_GET['type']);
-    $sql .= " AND p.p_collection = '$type'";
-}
+    if (!empty($_GET['type'])) {
+        $type = $db->real_escape_string($_GET['type']);
+        $sql .= " AND p.p_collection = '$type'";
+    }
 
-if (!empty($_GET['colour'])) {
-    $colour = $db->real_escape_string($_GET['colour']);
-    $sql .= " AND sc.colors = '$colour'";
-}
+    if (!empty($_GET['colour'])) {
+        $colour = $db->real_escape_string($_GET['colour']);
+        $sql .= " AND sc.colors = '$colour'";
+    }
 
-if (!empty($_GET['size'])) {
-    $size = (int)$_GET['size'];
-    $sql .= " AND sc.sizes = $size";
-}
+    if (!empty($_GET['size'])) {
+        $size = (int)$_GET['size'];
+        $sql .= " AND sc.sizes = $size";
+    }
 
-if (!empty($_GET['price_en'])) {
-    $price_to = (float)$_GET['price_en'];
-    $sql .= " AND p.p_price <= $price_to";
-}
+    if (!empty($_GET['price_en'])) {
+        $price_to = (float)$_GET['price_en'];
+        $sql .= " AND p.p_price <= $price_to";
+    }
 
-$sql .= " GROUP BY p.id_product";
+    $sql .= " GROUP BY p.id_product";
 
-$result = $db->query($sql);
+    $result = $db->query($sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,40 +61,7 @@ $result = $db->query($sql);
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <script src="JavaScript/jquery-3.7.1.js"></script>
     <script src="JavaScript/scripts.js"></script>
-    <style>
-        .container {
-            margin: 20px 0px 8px 16px;
-            height: 267px;
-            float: left;
-            width: 21%;
-            background-color: #FFEA9461;
-            border-radius: 1%;
-            border: 5px solid black;
-            text-align: left;
-            overflow: hidden;
-            padding: 0px 0px 0px 1%;
 
-            display: flex;
-            flex-direction: column;
-        }
-        .container h3{margin-bottom: 0;}
-        /* .container h4{margin-top: 0;} */
-        .product_img_cont{
-            width: 142%;
-            position: relative;
-            max-height: 150px;
-            margin-bottom: 14px;
-        }
-        .product_img{
-            width: 200px;
-        }
-        h4{
-            margin-top: auto;
-            margin-bottom: 6px;
-        }
-
-        .main::after { content: ""; display: table; clear: both; }
-    </style>
 </head>
 <body>
     <header>
@@ -114,15 +81,16 @@ $result = $db->query($sql);
             while($row = $result->fetch_assoc()) {
                 ?>
                 <div class="container">
-                    <h5 style="font-size: 28px; margin: 0px; padding: 0px; margin-top: 6px"><?php echo htmlspecialchars($row['p_name']); ?></h5>
-                    
-                    <div class="product_img_cont">
-                        <img class="product_img" src="images/buty/but<?php echo $row['id_product']; ?>.png" alt="boots">
-                    </div>
-                    
+                    <a href="product.php?id=<?php echo $row['id_product']; ?>" class="prod">
+                        <h5 style="font-size: 28px; margin: 0px; padding: 0px; margin-top: 6px"><?php echo htmlspecialchars($row['p_name']); ?></h5>
+                        
+                        <div class="product_img_cont">
+                            <img class="product_img" src="images/buty/but<?php echo $row['id_product']; ?>.png" alt="boots">
+                        </div>
+                    </a>
                     <h4><?php echo $row['p_price']; ?> zł</h4>
                     
-                    <?php if(isset($_SESSION['username'])): ?>
+                    <?php if(isset($_SESSION['login'])): ?>
                          <button style="font-family: 'Inter'; font-size: 10px; cursor: pointer;">Add to cart</button>
                     <?php endif; ?>
                 </div>
