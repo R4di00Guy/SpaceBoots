@@ -5,6 +5,7 @@ if (!isset($_SESSION['login'])) {
     header("Location: login.php");
     exit();
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,27 +33,81 @@ if (!isset($_SESSION['login'])) {
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <script src="JavaScript/jquery-3.7.1.js"></script>
     <script src="JavaScript/scripts.js"></script>
-
+    <style>
+        h4, .data{
+            display: inline;
+            font-weight: bold
+        }
+        #name{
+            text-transform: capitalize;
+        }
+        h4{
+            font-size: 26px;
+        }
+        td{
+            width: 61%;
+        }
+    </style>
 </head>
 <body>
     <header>
         <a href="index.php" class="logo"><img src="images/SpaceBoots_logo2.png"></a>
         <nav>
-                <a href="#" class="nav"><img id="cart" alt="shopping cart" src='images/ikony/koszyk.png'></a><div class="spaces"></div>
+                <a href="ShoppingCart.php" class="nav"><img id="cart" alt="shopping cart" src='images/ikony/koszyk.png'></a><div class="spaces"></div>
                 <a href="aboutus.html" class="nav">About us</a><div class="spaces"></div>
                 <a href="contact.html" class="nav">Contact</a><div class="spaces"></div>
-                <a href="profile.php" class="nav">Profile</a><div class="spaces"></div>
+                <span class="the_choosen_one"><a href="profile.php" class="nav">Profile</a></span><div class="spaces"></div>
                 <button id="themeSwitch"><img alt="light theme" class="themes" src="images/ikony/slonce.png"></button>
         </nav>
     </header>
-    <div class="main">
+    <div class="main" style="padding: 24px; width: fit-content;">
 
 
 <?php
-echo "<h1>Hello, <h2 style='display: inline'>" . htmlspecialchars($_SESSION['login']) . "!</h2></h1>";
-echo "<br><a href='logout.php'>Log out</a>"
-?>
+echo "<h1 style='display: inline'>Hello, <h2 style='display: inline'>" . htmlspecialchars($_SESSION['login']) . "!</h2></h1>";
 
+    $user_login = $_SESSION['login'];
+    $dataQ = $db->query("SELECT * FROM clients WHERE login = '$user_login'");
+    $profile = $dataQ->fetch_assoc();
+
+    if (!$profile) {
+        die("Strange thing.... No data found!");
+    }
+    if (!$profile['name']){
+        $profile['name']="noname";
+    }
+    if (!$profile['address']){
+        $profile['address']="No home";
+    }
+
+
+?>
+<p></p><br><p></p>
+<table>
+    <tr>
+        <td><h4>Your name and surname: </h4></td>
+        <td><div class="data" id="name"><?php echo htmlspecialchars($profile['name'])?> <?php echo htmlspecialchars($profile['surname'])?></div></td>
+    </tr>
+    <tr>
+        <td><h4>Your email: </h4></td>
+        <td><div class="data"><?php echo htmlspecialchars($profile['mail'])?></div></td>
+    </tr>
+    <tr>
+        <td><h4>Your phone number: </h4></td>
+        <td><div class="data"><?php echo htmlspecialchars($profile['phone_nb'])?></div></td>
+    </tr>
+    <tr>
+        <td><h4>Your address: </h4></td>
+        <td><div class="data"><?php echo htmlspecialchars($profile['address'])?></div></td>
+    </tr>
+</table>
+
+<h1><a href="ChangeProfile.php">Change your profile data</a></h1>
+
+
+<?php
+echo "<h2 style='margin: 23px 0px 0px 0px;'><a href='logout.php'>Log out</a></h2>";
+?>
 
 
     </div>

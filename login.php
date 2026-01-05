@@ -24,13 +24,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['login'] = $login;
             header("Location: profile.php");
             exit();
-        } else {
+        } 
+        else {
             $message = "Incorrect password";
             $error_class = "input-error";
         }
-
-
-    } else {
+    } 
+    else {
         $message = "Login not found";
         $error_class = "input-error";
     }
@@ -96,7 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <a href="index.php" class="logo"><img src="images/SpaceBoots_logo2.png"></a>
         <!--logo--> 
         <nav>
-                <a href="#" class="nav"><img id="cart" alt="shopping cart" src='images/ikony/koszyk.png'></a><!--koszyk--><div class="spaces"></div>
+                <a href="ShoppingCart.php" class="nav"><img id="cart" alt="shopping cart" src='images/ikony/koszyk.png'></a><!--koszyk--><div class="spaces"></div>
                 <a href="aboutus.html" class="nav">About us</a><!--link do podstrony--><div class="spaces"></div>
                 <a href="contact.html" class="nav">Contact</a><!--link do podstrony--><div class="spaces"></div>
                 <a href="#" class="nav">Profile</a><!--link do podstrony--><div class="spaces"></div>

@@ -29,6 +29,14 @@ header{
 nav{
     margin: 16px 16px 0px 0px;
 }
+a{
+    cursor: pointer;
+    color: rgb(61, 0, 184);
+}
+a:hover, a:visited{
+    color: rgb(61, 0, 184);
+    text-shadow: 0px 0px 19px rgba(76, 0, 148, 0.74);
+}
 #themeSwitch{
     width: 31px;
     height: 31px;
@@ -300,7 +308,7 @@ footer{
 } */
 #homef{
     clear: both;
-    height: 400px;
+    height: 380px;
     padding: 20px 50px;
 }
 .footerlogo{
@@ -425,3 +433,4 @@ div.image img.product_img{
     height: 300px;
     width: auto;
 }
+

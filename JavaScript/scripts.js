@@ -51,6 +51,12 @@ $(function(){
         $('.filters').css({
             'border':'5px solid white',
         });
+        $('.the_choosen_one a').css({
+            'color':'black',
+        });
+        $('.the_choosen_one').css({
+            'border-right':'5px solid #632bff',
+        });
 
         
 
@@ -113,6 +119,9 @@ $(function(){
         });
         $('.filters').css({
             'border':'5px solid black',
+        });
+        $('.the_choosen_one').css({
+            'border-right':'5px solid black',
         });
     }
 
