@@ -27,7 +27,15 @@ header{
 }
 /* nav do optymizacji */
 nav{
-    margin: 54px 16px 0px 0px;
+    margin: 16px 16px 0px 0px;
+}
+a{
+    cursor: pointer;
+    color: rgb(61, 0, 184);
+}
+a:hover, a:visited{
+    color: rgb(61, 0, 184);
+    text-shadow: 0px 0px 19px rgba(76, 0, 148, 0.74);
 }
 #themeSwitch{
     width: 31px;
@@ -42,6 +50,7 @@ nav{
     /* color: #FFDF0E; */
     /* padding-bottom: 25px; */
     line-height: 0px;
+    cursor: pointer;
 }
 .themes{
     position: relative;
@@ -51,7 +60,7 @@ nav{
 #cart{
     position: relative;
     width: 41px;
-    top: 2px;
+    top: 10px;
     filter: none;
 }
 h1{
@@ -84,6 +93,9 @@ h5{
     font-family: "Jersey 15", sans-serif;
     font-weight: 400;
     font-style: normal;
+
+
+    margin: 3px 0px
 }
 h6{
     font-family: "Gelasio", serif;
@@ -272,14 +284,16 @@ div.main{
 /* bloczek najeżdża na footer: trzeba naprawić */
 div.filters{
     width: auto;
-    /* min-height: 400px; turned it off, cause it was making me mad:)*/ 
-    height: 250px;
+    /* min-height: 400px; */
+    height: auto;
     border: 5px solid black;
     margin: 16px 16px 16px 0px;
     float: right;
     top: 0;
     position: sticky;
     top: 20px;
+    min-width: 322px;
+    padding: 0px 0px 13px 10px;
 }
 footer{
     height: 300px;
@@ -294,7 +308,7 @@ footer{
 } */
 #homef{
     clear: both;
-    height: 400px;
+    height: 380px;
     padding: 20px 50px;
 }
 .footerlogo{
@@ -344,3 +358,84 @@ footer{
     margin: 0;
     padding: 0;
 }
+
+
+
+
+
+
+/* index.php */
+
+.container {
+    margin: 20px 0px 8px 16px;
+    height: 267px;
+    float: left;
+    width: 21%;
+    background-color: #FFEA9461;
+    border-radius: 1%;
+    border: 5px solid black;
+    text-align: left;
+    overflow: hidden;
+    padding: 0px 0px 0px 1%;
+
+    display: flex;
+    flex-direction: column;
+}
+.container h3{margin-bottom: 0;}
+/* .container h4{margin-top: 0;} */
+.product_img_cont{
+    width: 142%;
+    position: relative;
+    max-height: 150px;
+    margin-bottom: 14px;
+}
+.product_img{
+    width: 200px;
+}
+h4{
+    margin-top: auto;
+    margin-bottom: 6px;
+}
+a.prod{
+    color: black
+}
+a.prod:hover{
+    color: #1900c9
+}
+
+.main::after { content: ""; display: table; clear: both; }
+
+
+
+
+
+/* product.php */
+
+.product-info{
+    width: 65%;
+}
+.options{
+    padding: 0px 0px 0px 20px;
+    border-left: 3px solid black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+div.image{
+    height: 300px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div.image img.product_img{
+    height: 300px;
+    width: auto;
+}
+
+
+
+ .icon{
+    width: 20px
+ }

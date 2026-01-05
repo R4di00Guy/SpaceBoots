@@ -24,13 +24,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['login'] = $login;
             header("Location: profile.php");
             exit();
-        } else {
+        } 
+        else {
             $message = "Incorrect password";
             $error_class = "input-error";
         }
-
-
-    } else {
+    } 
+    else {
         $message = "Login not found";
         $error_class = "input-error";
     }
@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         input:not(:placeholder-shown):valid {
-            border: 2px solid #2ecc71;
+            border: 2px solid #25bb63ff;
         }
 
 
@@ -96,7 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <a href="index.php" class="logo"><img src="images/SpaceBoots_logo2.png"></a>
         <!--logo--> 
         <nav>
-                <a href="#" class="nav"><img id="cart" alt="shopping cart" src='images/ikony/koszyk.png'></a><!--koszyk--><div class="spaces"></div>
+                <a href="ShoppingCart.php" class="nav"><img id="cart" alt="shopping cart" src='images/ikony/koszyk.png'></a><!--koszyk--><div class="spaces"></div>
                 <a href="aboutus.html" class="nav">About us</a><!--link do podstrony--><div class="spaces"></div>
                 <a href="contact.html" class="nav">Contact</a><!--link do podstrony--><div class="spaces"></div>
                 <a href="#" class="nav">Profile</a><!--link do podstrony--><div class="spaces"></div>
@@ -142,9 +142,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         <div class="socials">
             <ul>
-                <li><a href="#"><img src="images/ikony/facebook.png" alt="Facebook"></a></li>
-                <li><a href="#"><img src="images/ikony/instagram.png" alt="Instagram"></a></li>
-                <li><a href="#"><img src="images/ikony/twitter.png" alt="Twitter"></a></li>
+                <li><a href="#"><img src="images/ikony/facebook.png" alt="Facebook" class="icon"></a></li>
+                <li><a href="#"><img src="images/ikony/instagram.png" alt="Instagram" class="icon"></a></li>
+                <li><a href="#"><img src="images/ikony/twitter.png" alt="Twitter" class="icon"></a></li>
             </ul>
         </div>
         <div class="copyrights">

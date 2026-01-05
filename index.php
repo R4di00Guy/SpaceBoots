@@ -69,7 +69,7 @@
     <header>
         <a href="index.php" class="logo"><img src="images/SpaceBoots_logo2.png"></a>
         <nav>
-                <a href="#" class="nav"><img id="cart" alt="shopping cart" src='images/ikony/koszyk.png'></a><div class="spaces"></div>
+                <a href="ShoppingCart.php" class="nav"><img id="cart" alt="shopping cart" src='images/ikony/koszyk.png'></a><div class="spaces"></div>
                 <a href="aboutus.html" class="nav">About us</a><div class="spaces"></div>
                 <a href="contact.html" class="nav">Contact</a><div class="spaces"></div>
                 <a href="profile.php" class="nav">Profile</a><div class="spaces"></div>
@@ -176,9 +176,9 @@
         
         <div class="socials">
             <ul>
-                <li><a href="#"><img src="images/ikony/facebook.png" alt="Facebook"></a></li>
-                <li><a href="#"><img src="images/ikony/instagram.png" alt="Instagram"></a></li>
-                <li><a href="#"><img src="images/ikony/twitter.png" alt="Twitter"></a></li>
+                <li><a href="#"><img src="images/ikony/facebook.png" alt="Facebook" class="icon"></a></li>
+                <li><a href="#"><img src="images/ikony/instagram.png" alt="Instagram" class="icon"></a></li>
+                <li><a href="#"><img src="images/ikony/twitter.png" alt="Twitter" class="icon"></a></li>
             </ul>
         </div>
         <div class="copyrights">
