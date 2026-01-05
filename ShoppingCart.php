@@ -80,7 +80,7 @@ $total_price = 0;
 </head>
 <body>
     <header>
-        <a href="index.php" class="logo"><img src="images/SpaceBoots_logo2.png"></a>
+        <a href="index.php" class="logo"><img src="images/SpaceBoots_logo2.png" alt="SpaceBoots Logo"></a>
         <nav>
                 <span class="the_choosen_one"><a href="ShoppingCart.php" class="nav"><img id="cart" alt="shopping cart" src='images/ikony/koszyk.png'></a></span><div class="spaces"></div>
                 <a href="aboutus.html" class="nav">About us</a><div class="spaces"></div>
@@ -167,3 +167,4 @@ $total_price = 0;
 </body>
 
 </html>
+
