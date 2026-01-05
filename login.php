@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         input:not(:placeholder-shown):valid {
-            border: 2px solid #2ecc71;
+            border: 2px solid #25bb63ff;
         }
 
 

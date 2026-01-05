@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="JavaScript/scripts.js"></script>
     <style>
         input:not(:placeholder-shown):invalid {
-            border: 2px solid #ff4d4d !important;
+            border: 2px solid #ff4d4d;
             background-color: #fff5f5;
         }
 
@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         input:not(:placeholder-shown):valid {
-            border: 2px solid #2ecc71;
+            border: 2px solid #25bb63ff;
         }
 
 

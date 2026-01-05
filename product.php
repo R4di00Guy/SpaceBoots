@@ -45,12 +45,29 @@
         align-items: stretch;
         margin-left: 100px;
         gap: 20px;
-    }
+        }
+        .error, .success {
+            /* background-color: #fff5f5; */
+            font-weight: bold; 
+            font-size: 18px
+        }
+        .error{
+            color: #ff4d4d;
+            text-decoration: underline;
+        }
+        .success{
+            color: #25bb63ff;
+        }
+        select, button{
+            background-color: white;
+            border: solid rgba(98, 0, 217, 0.48) 2px;
+            font-size: 17px;
+        }
     </style>
 </head>
 <body>
     <header>
-        <a href="home.html" class="logo"><img src="images/SpaceBoots_logo2.png"></a>
+        <a href="index.php" class="logo"><img src="images/SpaceBoots_logo2.png"></a>
         <!--logo--> 
         <nav>
                 <a href="ShoppingCart.php" class="nav"><img id="cart" alt="shopping cart" src='images/ikony/koszyk.png'></a><!--koszyk--><div class="spaces"></div>
@@ -62,6 +79,8 @@
     </header>
 <div class="main">
     <?php 
+        $message = "";
+
         $product_query = $db->query("SELECT * FROM products WHERE id_product = $id");
         $product = $product_query->fetch_assoc();
 
@@ -84,7 +103,7 @@
             }
 
             $user_login = $_SESSION['login'];
-            $user_query = $db->query("SELECT id_user FROM users WHERE login = '$user_login'"); 
+            $user_query = $db->query("SELECT id_client FROM clients WHERE login = '$user_login'"); 
             $user_data = $user_query->fetch_assoc();
             $id_client = $user_data['id_client'];
 
@@ -94,12 +113,12 @@
             $amount = 1;
 
             $insert_sql = "INSERT INTO shopping_cart (id_client, id_product, amount, p_size, p_color) 
-                        VALUES ('$id_client', '$id', '$amount', '$size', '$color')";
+            VALUES ('$id_client', '$id', '$amount', '$size', '$color')";
 
             if ($db->query($insert_sql)) {
-                $success_msg = "Product successfully added to your cart in database!";
+                $message = "<h5 class='success'>Product successfully added to your cart in database!</h5>";
             } else {
-                $error_msg = "Error: " . $db->error;
+                $message = "<h5 class='error'>Error: " . $db->error . "</h5>";
             }
         }
     ?>
@@ -141,8 +160,12 @@
                         <?php endforeach; ?>
                     </select>
                 </div><button type="submit" name="add_to_cart" style="margin-top: 20px; padding: 10px 20px; cursor: pointer; ">
-                    Add to shopping cart
+                    Add to shopping cart   
+            <?php if ($message): ?>
+                <?php echo $message; ?>
+            <?php endif; ?>
                 </button>
+
             </form>
         </div>
     </div>

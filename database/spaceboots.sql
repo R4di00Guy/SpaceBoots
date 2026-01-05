@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2026 at 07:23 PM
+-- Generation Time: Jan 05, 2026 at 08:40 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -43,7 +43,7 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`id_client`, `name`, `surname`, `mail`, `phone_nb`, `login`, `password`, `address`) VALUES
-(1, '', '', 'blablabla@gmail.com', '+48777777777', 'login1', '$2y$10$MpgDYov2vqzjcz3J78GP2uZhEW3ogKo5aQIj3S1xflwldy7bddHLy', ''),
+(1, 'Zuzanna', 'Ciba', 'blablabla@gmail.com', '+48777777777', 'login1', '$2y$10$MpgDYov2vqzjcz3J78GP2uZhEW3ogKo5aQIj3S1xflwldy7bddHLy', 'Gdzieś 12'),
 (5, '', '', 'blablabla2@gmail.com', '+48777777777', 'login2', '$2y$10$DdvoYkCrMR/Hp6aS4VEyR.LY5bJCNIgGfTIPCjM9NTa2BT6PH8vUO', '');
 
 -- --------------------------------------------------------
@@ -126,10 +126,28 @@ CREATE TABLE `shopping_cart` (
   `id_shopping_cart` int(11) NOT NULL,
   `id_client` int(11) NOT NULL,
   `id_product` int(11) NOT NULL,
+  `ordered` tinyint(1) DEFAULT NULL,
   `amount` int(11) NOT NULL,
   `p_size` int(2) NOT NULL,
   `p_color` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `shopping_cart`
+--
+
+INSERT INTO `shopping_cart` (`id_shopping_cart`, `id_client`, `id_product`, `ordered`, `amount`, `p_size`, `p_color`) VALUES
+(1, 1, 3, NULL, 1, 40, 'black'),
+(2, 1, 4, NULL, 1, 40, 'black'),
+(3, 1, 2, NULL, 1, 38, 'brown'),
+(4, 1, 2, NULL, 1, 38, 'brown'),
+(5, 1, 2, NULL, 1, 38, 'brown'),
+(6, 1, 2, NULL, 1, 38, 'brown'),
+(7, 1, 2, NULL, 1, 38, 'brown'),
+(8, 1, 3, NULL, 1, 35, 'black'),
+(9, 1, 3, NULL, 1, 35, 'black'),
+(10, 1, 1, NULL, 1, 40, 'white'),
+(11, 1, 1, NULL, 1, 40, 'white');
 
 -- --------------------------------------------------------
 
@@ -324,6 +342,12 @@ ALTER TABLE `products`
   ADD UNIQUE KEY `id_product` (`id_product`);
 
 --
+-- Indexes for table `shopping_cart`
+--
+ALTER TABLE `shopping_cart`
+  ADD PRIMARY KEY (`id_shopping_cart`);
+
+--
 -- Indexes for table `sizes_colors`
 --
 ALTER TABLE `sizes_colors`
@@ -350,6 +374,12 @@ ALTER TABLE `orders`
 --
 ALTER TABLE `products`
   MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `shopping_cart`
+--
+ALTER TABLE `shopping_cart`
+  MODIFY `id_shopping_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `sizes_colors`

@@ -1,10 +1,47 @@
 <?php
 include 'database/Connection.php';
-
+session_start();
 if (!isset($_SESSION['login'])) {
     header("Location: login.php");
     exit();
 }
+
+$user_login = $_SESSION['login'];
+
+$client_query = $db->prepare("SELECT id_client FROM clients WHERE login = ?");
+$client_query->bind_param("s", $user_login);
+$client_query->execute();
+// $client_data = $client_query->get_result()->fetch_assoc();
+
+// if (!$client_data) {
+//     die("Error: Client not found in database for login: " . htmlspecialchars($user_login));
+// }
+$id_client = $client_query->get_result()->fetch_assoc()['id_client'];
+
+if (isset($_GET['remove'])) {
+    $remove_id = (int)$_GET['remove'];
+    $db->query("DELETE FROM shopping_cart WHERE id_shopping_cart = $remove_id AND id_client = $id_client");
+    header("Location: ShoppingCart.php");
+    exit();
+}
+
+$sql = "SELECT sc.id_shopping_cart, sc.amount, sc.p_size, sc.p_color, p.id_product, p.p_name, p.p_price 
+        FROM shopping_cart sc 
+        JOIN products p ON sc.id_product = p.id_product 
+        WHERE sc.id_client = ? AND sc.ordered = 0";
+
+
+$stmt = $db->prepare($sql);
+if (!$stmt) {
+    die("SQL Error: " . $db->error);
+}
+// imp
+$id_client = 1;
+$stmt->bind_param("i", $id_client);
+$stmt->execute();
+$cart_result = $stmt->get_result();
+
+$total_price = 0;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,6 +84,52 @@ if (!isset($_SESSION['login'])) {
         </nav>
     </header>
     <div class="main" style="padding: 24px; width: fit-content;">
+
+    <?php if ($cart_result->num_rows > 0): ?>
+        <table class="cart-table">
+                <tr>
+                    <th>Product</th>
+                    <th>Info</th>
+                    <th>Price</th>
+                    <th>Amount</th>
+                    <th>Subtotal</th>
+                    <th></th>
+                </tr>
+                <?php while($item = $cart_result->fetch_assoc()): 
+                    $subtotal = $item['p_price'] * $item['amount'];
+                    $total_price += $subtotal;
+                ?>
+                    <tr>
+                        <td>
+                            <img src="images/buty/but<?php echo $item['id_product']; ?>.png" class="product-img-small" alt="boot">
+                        </td>
+                        <td>
+                            <strong style="font-size: 18px;"><?php echo htmlspecialchars($item['p_name']); ?></strong><br>
+                            <span style="font-size: 14px; color: #666;">Color: <?php echo $item['p_color']; ?>, Size: <?php echo $item['p_size']; ?></span>
+                        </td>
+                        <td><?php echo number_format($item['p_price'], 2); ?> zł</td>
+                        <td><?php echo $item['amount']; ?></td>
+                        <td><strong><?php echo number_format($subtotal, 2); ?> zł</strong></td>
+                        <td>
+                            <a href="ShoppingCart.php?remove=<?php echo $item['id_shopping_cart']; ?>" class="remove-btn" onclick="return confirm('Remove this item?')">Remove</a>
+                        </td>
+                    </tr>
+                <?php endwhile; ?>
+            </table>
+
+            <div class="total-section">
+                <p>Total: <strong><?php echo number_format($total_price, 2); ?> zł</strong></p>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+
+        <?php else: ?>
+            <div style="text-align: center; margin-top: 50px;">
+                <h4 style="font-size: 26px">Your cart is empty...</h2>
+                <a href="index.php" style="color: #000;">Go shopping!</a>
+            </div>
+        <?php endif; ?>
+    </div>
+
 
     </div>
     <footer id="homef">

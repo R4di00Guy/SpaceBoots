@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_profile'])) {
     </script>
     <style>
         .success {
-            color: #2ecc71;
+            color: #25bb63ff;
             font-weight: bold;
             text-align: center;
         }
