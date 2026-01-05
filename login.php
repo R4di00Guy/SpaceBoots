@@ -151,7 +151,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h4>spaceboots&copy;, 2025</h4>
         </div>
     </footer>
-    
 </body>
-
 </html>

@@ -1,50 +1,44 @@
 <?php
 include 'database/Connection.php';
-
+session_start();
 $message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $login = $_POST['login'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
     $password = $_POST['password'];
 
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+// $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
+    $stmt = $db -> prepare("SELECT password FROM clients WHERE login = ?");
+    $stmt->bind_param("s", $login);
+    $stmt->execute();
+    $stmt->store_result();
 
-    $qCheckLogin = $db -> prepare("SELECT login FROM clients WHERE login = ?");
-    $qCheckLogin -> bind_param("s", $login);
-    $qCheckLogin -> execute();
-    $qCheckLogin -> store_result();
+    if ($stmt->num_rows > 0) {
+        $stmt->bind_result($db_password);
+        $stmt->fetch();
 
-    $qCheckEmail = $db -> prepare("SELECT mail FROM clients WHERE mail = ?");
-    $qCheckEmail -> bind_param("s", $email);
-    $qCheckEmail -> execute();
-    $qCheckEmail -> store_result();
-
-    if ($qCheckLogin->num_rows > 0) {
-        $message = "<h5 class='error'>Login already exists</h5>";
-    }
-    else if($qCheckEmail->num_rows > 0) {
-        $message = "<h5 class='error'>Email already exists</h5>";
-        }
-    else {
-        $stmt = $db -> prepare("INSERT INTO clients (login, mail, phone_nb, password) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("ssss", $login, $email, $phone, $hashed_password);
-
-        if ($stmt->execute()) {
-            $message = "<h5 class='correct'>Account created successfully</h5>";
+        if(password_verify($password, $db_password)){
+            $message = "Login successful";
+            // session_start();
+            $_SESSION['login'] = $login;
+            header("Location: profile.php");
+            exit();
         } else {
-            $message = "<h5 class='error'>Error: " . $stmt->error . "</h5>";
+            $message = "Incorrect password";
+            $error_class = "input-error";
         }
 
-        $stmt->close();
-        }
-   
 
-    $qCheckEmail->close();
+    } else {
+        $message = "Login not found";
+        $error_class = "input-error";
+    }
+
+    $stmt->close();
     $db->close();
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,7 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <title>SpaceBoots Login</title>
     <link href="styles.css" rel="stylesheet">
-    <html lang="en">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jaini&display=swap" rel="stylesheet">
@@ -89,17 +82,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
 
-        .error, .correct {
+        .input-error {
+            color: #ff4d4d;
+            text-decoration: underline;
             /* background-color: #fff5f5; */
             font-weight: bold; 
             font-size: 18px
-        }
-        .error{
-            color: #ff4d4d;
-            text-decoration: underline;
-        }
-        .correct{
-            color: #2ecc71;
         }
     </style>
 </head>
@@ -108,10 +96,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <a href="index.php" class="logo"><img src="images/SpaceBoots_logo2.png"></a>
         <!--logo--> 
         <nav>
-                <a href="#" class="nav"><img id="cart" alt="shopping cart" src='images/ikony/koszyk.png'></a><div class="spaces"></div>
-                <a href="aboutus.html" class="nav">About us</a><div class="spaces"></div>
-                <a href="contact.html" class="nav">Contact</a><div class="spaces"></div>
-                <span class="the_choosen_one"><a href="profile.php" class="nav">Profile</a></span><div class="spaces"></div>
+                <a href="#" class="nav"><img id="cart" alt="shopping cart" src='images/ikony/koszyk.png'></a><!--koszyk--><div class="spaces"></div>
+                <a href="aboutus.html" class="nav">About us</a><!--link do podstrony--><div class="spaces"></div>
+                <a href="contact.html" class="nav">Contact</a><!--link do podstrony--><div class="spaces"></div>
+                <a href="#" class="nav">Profile</a><!--link do podstrony--><div class="spaces"></div>
                 <button id="themeSwitch"><img alt="light theme" class="themes" src="images/ikony/slonce.png"></button>
         </nav>
     </header>
@@ -121,20 +109,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
            <h2><a href="">to make an order</a></h2> 
         </div>
         <div class="login_main">
-            <h1>Sign in</h1>
-            <?php if ($message): ?>
-                <?php echo $message; ?>
-            <?php endif; ?>
-            <form action="" onsubmit=""  method="post">
-                <input type="text" name="login" placeholder="| login"  style="font-size: 18px;" pattern="(?=.*[a-z])[a-z0-9]{3,20}" required>
-                <input type="text" name="email" placeholder="| email"  style="font-size: 18px;" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
-                <input type="text" name="phone" placeholder="| phone number"  style="font-size: 18px;" pattern="^(?:\+48)? ?[0-9]{3}[ -]?[0-9]{3}[ -]?[0-9]{3}$" required>
-                <input type="password" name="password" pattern="(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*(),?\[\]{}<>]).{10,30}" placeholder="| password"  style="font-size: 18px;" required>
-                <input type="submit" name="reg" id="reg" value="Create an account">
+            <h1>Log in</h1>
+            <form action="" onsubmit="" method="post">
+                <?php if ($message): ?>
+                    <h5 class="input-error"><?php echo $message; ?></h5>
+                    <!-- <?php echo $message; ?> -->
+                <?php endif; ?>
+                <input type="text" name="login" placeholder="| login" style="font-size: 18px;" pattern="(?=.*[a-z])[a-z0-9]{3,20}" required>
+                <input type="password" name="password" placeholder="| password" style="font-size: 18px;" pattern="(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*(),?\[\]{}<>]).{10,30}" required>
+                <a href="" id="log_password">Forgot password?</a>
+                <input type="submit" name="log_login_inp" id="log_login_inp" value="Log in">
             </form><br>
             <div class="line"></div>
             <div style="margin-top: -27px;"><h2 id="orsign" style="background-color: #fff; display: block; width: fit-content; margin: auto;">OR</h2></div>
-            <h1><a href="login.php">Log in</a></h1>
+            <h1><a href="CreateAnAccount.php">Create an account</a></h1>
             <h4>Problems? <a href="contact.html">Contact us.</a></h4>
         </div>
     </div>
