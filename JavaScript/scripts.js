@@ -42,6 +42,26 @@ $(function(){
             'bottom':'1px',
             'right':'2px',
         });
+        $('.spaces').css({
+            'border-right':'solid 3px white',
+        });
+        $('.main').css({
+            'border':'5px solid white',
+        });
+        $('.filters').css({
+            'border':'5px solid white',
+        });
+        $('.the_choosen_one a').css({
+            'color':'black',
+        });
+        $('.the_choosen_one').css({
+            'border-right':'5px solid #632bff',
+        });
+
+        
+
+
+
         $('#cart').css({'filter':'invert()',});
         l=1;
         console.log(l);
@@ -89,6 +109,20 @@ $(function(){
         $('#cart').css({'filter':'none',});
         l=0;
         console.log(l);
+
+        
+        $('.spaces').css({
+            'border-right':'solid 3px black',
+        });
+        $('.main').css({
+            'border':'5px solid black',
+        });
+        $('.filters').css({
+            'border':'5px solid black',
+        });
+        $('.the_choosen_one').css({
+            'border-right':'5px solid black',
+        });
     }
 
     })
