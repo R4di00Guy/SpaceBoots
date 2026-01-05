@@ -35,8 +35,6 @@ $stmt = $db->prepare($sql);
 if (!$stmt) {
     die("SQL Error: " . $db->error);
 }
-// imp
-$id_client = 1;
 $stmt->bind_param("i", $id_client);
 $stmt->execute();
 $cart_result = $stmt->get_result();
@@ -167,4 +165,5 @@ $total_price = 0;
     </footer>
     
 </body>
+
 </html>
