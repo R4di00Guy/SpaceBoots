@@ -70,6 +70,14 @@ $total_price = 0;
     <script src="JavaScript/jquery-3.7.1.js"></script>
     <script src="JavaScript/scripts.js"></script>
     <style>
+        img.boot{
+            max-width: 200px;
+        }
+        button{
+            background-color: white;
+            border: solid rgba(98, 0, 217, 0.48) 2px;
+            font-size: 17px;
+        }
     </style>
 </head>
 <body>
@@ -101,7 +109,7 @@ $total_price = 0;
                 ?>
                     <tr>
                         <td>
-                            <img src="images/buty/but<?php echo $item['id_product']; ?>.png" class="product-img-small" alt="boot">
+                            <img class="boot" src="images/buty/but<?php echo $item['id_product']; ?>.png" class="product-img-small" alt="boot">
                         </td>
                         <td>
                             <strong style="font-size: 18px;"><?php echo htmlspecialchars($item['p_name']); ?></strong><br>

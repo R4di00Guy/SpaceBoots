@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 05, 2026 at 08:40 PM
+-- Generation Time: Jan 05, 2026 at 08:49 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -126,7 +126,7 @@ CREATE TABLE `shopping_cart` (
   `id_shopping_cart` int(11) NOT NULL,
   `id_client` int(11) NOT NULL,
   `id_product` int(11) NOT NULL,
-  `ordered` tinyint(1) DEFAULT NULL,
+  `ordered` int(1) DEFAULT 0,
   `amount` int(11) NOT NULL,
   `p_size` int(2) NOT NULL,
   `p_color` varchar(30) NOT NULL
@@ -137,17 +137,9 @@ CREATE TABLE `shopping_cart` (
 --
 
 INSERT INTO `shopping_cart` (`id_shopping_cart`, `id_client`, `id_product`, `ordered`, `amount`, `p_size`, `p_color`) VALUES
-(1, 1, 3, NULL, 1, 40, 'black'),
-(2, 1, 4, NULL, 1, 40, 'black'),
-(3, 1, 2, NULL, 1, 38, 'brown'),
-(4, 1, 2, NULL, 1, 38, 'brown'),
-(5, 1, 2, NULL, 1, 38, 'brown'),
-(6, 1, 2, NULL, 1, 38, 'brown'),
-(7, 1, 2, NULL, 1, 38, 'brown'),
-(8, 1, 3, NULL, 1, 35, 'black'),
-(9, 1, 3, NULL, 1, 35, 'black'),
-(10, 1, 1, NULL, 1, 40, 'white'),
-(11, 1, 1, NULL, 1, 40, 'white');
+(2, 1, 4, 0, 1, 40, 'black'),
+(3, 1, 2, 0, 1, 38, 'brown'),
+(12, 1, 2, 0, 1, 38, 'brown');
 
 -- --------------------------------------------------------
 
@@ -379,7 +371,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `shopping_cart`
 --
 ALTER TABLE `shopping_cart`
-  MODIFY `id_shopping_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_shopping_cart` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `sizes_colors`
