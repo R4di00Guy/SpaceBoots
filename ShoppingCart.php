@@ -156,9 +156,9 @@ $total_price = 0;
         
         <div class="socials">
             <ul>
-                <li><a href="#"><img src="images/ikony/facebook.png" alt="Facebook"></a></li>
-                <li><a href="#"><img src="images/ikony/instagram.png" alt="Instagram"></a></li>
-                <li><a href="#"><img src="images/ikony/twitter.png" alt="Twitter"></a></li>
+                <li><a href="#"><img src="images/ikony/facebook.png" alt="Facebook" class="icon" class="icon"></a></li>
+                <li><a href="#"><img src="images/ikony/instagram.png" alt="Instagram" class="icon" class="icon"></a></li>
+                <li><a href="#"><img src="images/ikony/twitter.png" alt="Twitter" class="icon" class="icon"></a></li>
             </ul>
         </div>
         <div class="copyrights">

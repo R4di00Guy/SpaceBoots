@@ -197,9 +197,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_profile'])) {
         
         <div class="socials">
             <ul>
-                <li><a href="#"><img src="images/ikony/facebook.png" alt="Facebook"></a></li>
-                <li><a href="#"><img src="images/ikony/instagram.png" alt="Instagram"></a></li>
-                <li><a href="#"><img src="images/ikony/twitter.png" alt="Twitter"></a></li>
+                <li><a href="#"><img src="images/ikony/facebook.png" alt="Facebook" class="icon"></a></li>
+                <li><a href="#"><img src="images/ikony/instagram.png" alt="Instagram" class="icon"></a></li>
+                <li><a href="#"><img src="images/ikony/twitter.png" alt="Twitter" class="icon"></a></li>
             </ul>
         </div>
         <div class="copyrights">
