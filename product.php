@@ -16,7 +16,6 @@
     <meta charset="UTF-8">
     <title>SpaceBoots Home page</title>
     <link href="styles.css" rel="stylesheet">
-    <html lang="en">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jaini&display=swap" rel="stylesheet">
@@ -67,7 +66,7 @@
 </head>
 <body>
     <header>
-        <a href="index.php" class="logo"><img src="images/SpaceBoots_logo2.png"></a>
+        <a href="index.php" class="logo"><img src="images/SpaceBoots_logo2.png" alt="SpaceBoots Logo"></a>
         <!--logo--> 
         <nav>
                 <a href="ShoppingCart.php" class="nav"><img id="cart" alt="shopping cart" src='images/ikony/koszyk.png'></a><!--koszyk--><div class="spaces"></div>
@@ -197,4 +196,5 @@
         </div>
     </footer>
 </body>
+
 </html>
