@@ -126,9 +126,8 @@ $(function(){
     }
 
     })
-});//😖
+});
 
-// updating footer date to the current year
 $(document).ready(function() {
     $('.copyrights h4').html(`spaceboots &copy; ${new Date().getFullYear()}`);
 });
