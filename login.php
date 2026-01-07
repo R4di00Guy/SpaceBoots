@@ -117,13 +117,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php endif; ?>
                 <input type="text" name="login" placeholder="| login" style="font-size: 18px;" pattern="(?=.*[a-z])[a-z0-9]{3,20}" required>
                 <input type="password" name="password" placeholder="| password" style="font-size: 18px;" pattern="(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*(),?\[\]{}<>]).{10,30}" required>
-                <a href="" id="log_password">Forgot password?</a>
+                <a href="contactus.html" id="log_password">Forgot password?</a>
                 <input type="submit" name="log_login_inp" id="log_login_inp" value="Log in">
             </form><br>
             <div class="line"></div>
             <div style="margin-top: -27px;"><h2 id="orsign" style="background-color: #fff; display: block; width: fit-content; margin: auto;">OR</h2></div>
             <h1><a href="CreateAnAccount.php">Create an account</a></h1>
-            <h4>Problems? <a href="contact.html">Contact us.</a></h4>
+            <h4>Problems? <a href="contactus.html">Contact us.</a></h4>
         </div>
     </div>
     <footer id="homef">
@@ -154,3 +154,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 
 </html>
+
