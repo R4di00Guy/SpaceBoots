@@ -93,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <header>
-        <a href="index.php" class="logo"><img src="images/SpaceBoots_logo2.png"></a>
+        <a href="index.php" class="logo"><img src="images/SpaceBoots_logo2.png" alt="SpaceBoots Logo"></a>
         <!--logo--> 
         <nav>
                 <a href="ShoppingCart.php" class="nav"><img id="cart" alt="shopping cart" src='images/ikony/koszyk.png'></a><!--koszyk--><div class="spaces"></div>
@@ -117,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php endif; ?>
                 <input type="text" name="login" placeholder="| login" style="font-size: 18px;" pattern="(?=.*[a-z])[a-z0-9]{3,20}" required>
                 <input type="password" name="password" placeholder="| password" style="font-size: 18px;" pattern="(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%^&*(),?\[\]{}<>]).{10,30}" required>
-                <a href="" id="log_password">Forgot password?</a>
+                <a href="contact.html" id="log_password">Forgot password?</a>
                 <input type="submit" name="log_login_inp" id="log_login_inp" value="Log in">
             </form><br>
             <div class="line"></div>
@@ -152,4 +152,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </footer>
 </body>
+
 </html>
+
+

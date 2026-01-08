@@ -51,7 +51,7 @@ if (!isset($_SESSION['login'])) {
 </head>
 <body>
     <header>
-        <a href="index.php" class="logo"><img src="images/SpaceBoots_logo2.png"></a>
+        <a href="index.php" class="logo"><img src="images/SpaceBoots_logo2.png" alt="SpaceBoots Logo"></a>
         <nav>
                 <a href="ShoppingCart.php" class="nav"><img id="cart" alt="shopping cart" src='images/ikony/koszyk.png'></a><div class="spaces"></div>
                 <a href="aboutus.html" class="nav">About us</a><div class="spaces"></div>
@@ -138,4 +138,5 @@ echo "<h2 style='margin: 23px 0px 0px 0px;'><a href='logout.php'>Log out</a></h2
     </footer>
     
 </body>
+
 </html>

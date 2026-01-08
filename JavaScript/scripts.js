@@ -126,4 +126,8 @@ $(function(){
     }
 
     })
-});//😖
+});
+
+$(document).ready(function() {
+    $('.copyrights h4').html(`spaceboots &copy; ${new Date().getFullYear()}`);
+});
