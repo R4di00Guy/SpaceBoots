@@ -64,6 +64,14 @@
     <script src="JavaScript/jquery-3.7.1.js"></script>
     <script src="JavaScript/scripts.js"></script>
 
+    <style>
+        select, input, button{
+            background-color: white;
+            border: solid rgba(98, 0, 217, 0.48) 2px;
+            font-size: 17px;
+        }
+    </style>
+
 </head>
 <body>
     <header>
