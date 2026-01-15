@@ -76,6 +76,9 @@ $total_price = 0;
             border: solid rgba(98, 0, 217, 0.48) 2px;
             font-size: 17px;
         }
+        a.remove-btn{
+            margin-left:15px;
+        }
     </style>
 </head>
 <body>
