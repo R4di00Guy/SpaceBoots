@@ -63,6 +63,7 @@ $(function(){
 
 
         $('#cart').css({'filter':'invert()',});
+        $('span #cart').css({'filter':'none',});
         l=1;
         console.log(l);
     }
