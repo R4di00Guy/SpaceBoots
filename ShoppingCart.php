@@ -138,7 +138,7 @@ $total_price = 0;
 
 
     </div>
-    <footer id="homef">
+    <footer id="homef" style="position: fixed;width: 100%; bottom: 0;">
         <div class="footerlogo">
             <a href="space_boots_home.html" class="logo"><img src="images/SpaceBoots_logo2.png"></a>
         </div>
